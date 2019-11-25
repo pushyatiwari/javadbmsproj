@@ -43,7 +43,7 @@ public class BookAuditorium extends javax.swing.JFrame {
         Statement myStmt = null;
         ResultSet myRs = null;
         PreparedStatement preparedStatement;
-      
+      Time time1,time2;
     /**
      * Creates new form BookAuditorium
      */
@@ -193,6 +193,11 @@ public class BookAuditorium extends javax.swing.JFrame {
 
         eventidval.setFont(new java.awt.Font("Courier 10 Pitch", 1, 24)); // NOI18N
         eventidval.setForeground(new java.awt.Color(1, 1, 1));
+        eventidval.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eventidvalActionPerformed(evt);
+            }
+        });
 
         eventname2.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
         eventname2.setForeground(new java.awt.Color(39, 229, 217));
@@ -359,11 +364,10 @@ ma.audno_val.addItem(a_name);
          
          
     }//GEN-LAST:event_modifyauditoriumActionPerformed
-
-    private void addeventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addeventActionPerformed
-        // TODO add your handling code here:
-       
-        id = Integer.parseInt(eventidval.getText());
+ 
+    public void insertintoEvent()
+    {
+         id = Integer.parseInt(eventidval.getText());
         eName = eventnameval.getText();
         Maxseat = Integer.parseInt(maxseatsval.getText());
         sTime = starttimeval.getText();
@@ -383,8 +387,8 @@ java.sql.Date sqlDateofevnt = new java.sql.Date(dateOfEvent.getTime());
      } catch (ParseException ex) {
          Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
      }
-      Time time1 = new Time(date1.getTime());
-      Time time2 = new Time(date2.getTime());
+       time1 = new Time(date1.getTime());
+       time2 = new Time(date2.getTime());
         
         String query = "insert into Events (Event_ID, Event_Name, MxStRqFrEvnt,Date,StartTime,EndTime) " + 
                                    "values (?,?,?,?,?,?)"; 
@@ -410,113 +414,44 @@ java.sql.Date sqlDateofevnt = new java.sql.Date(dateOfEvent.getTime());
          Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
      } finally {
             try {
-                preparedStatement.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            try {
                 myConn.close();
             } catch (SQLException ex) {
                 Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
             }
       }
-   
-        
-    }//GEN-LAST:event_addeventActionPerformed
 
-    private void bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookActionPerformed
-        // TODO add your handling code here:
-         ResultSet Audit = null ;
-         ResultSet ahase;
-         String eventid;
-         int flag = 0;
-         eventid = eventidval.getText();
-        eName = eventnameval.getText();
-        Maxseat = Integer.parseInt(maxseatsval.getText());
-        sTime = starttimeval.getText();
-        eTime = endtimeval.getText();
-        
-     Date dateOfEvent = dateval.getDate();
-java.sql.Date sqlDateofevnt = new java.sql.Date(dateOfEvent.getTime());     
-         try {
-             //for stime and etime formatting
-    DateFormat sdf = new SimpleDateFormat("hh:mm");
-      Date date1 = null;
-       Date date2 = null;
-     try {
-         date1 = sdf.parse(sTime);
-          date2 = sdf.parse(eTime);
-     } catch (ParseException ex) {
-         Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
-     }
-      Time time1 = new Time(date1.getTime());
-      Time time2 = new Time(date2.getTime());
-
-
-getConnectiondb();
+    }
+    
+    public void insertintoAhasE(String aud_id, String eventid)
+    {
+            try {
+                          try {
+             getConnectiondb();
          } catch (SQLException ex) {
              Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
          } catch (ClassNotFoundException ex) {
              Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
          }
-        PreparedStatement query1 = null;
-     PreparedStatement  query2 = null; 
-         try {
-             query1 = myConn.prepareStatement("Select * from Auditoriums");
-           query2 = myConn.prepareStatement("Select * from AHASE");
-         } catch (SQLException ex) {
-             Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
-         }
-        
-     try {
-        getConnectiondb();
-         Audit = query1.executeQuery();
-        ahase = query2.executeQuery();
-
-     }   catch (SQLException ex) {
-             Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (ClassNotFoundException ex) {
-             Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
-         }
-     
-         
-             try {
-                 while(Audit.next())
-                 {
-//                System.out.print(Audit.getString("Aud_ID"));
-//                 System.out.print(" , ");
-//                System.out.print(Audit.getString("NoofSeats"));
-//                  System.out.print(" , ");
-//                System.out.print(Audit.getString("Status"));
-//                  System.out.print(" , ");
-//                 System.out.print(Audit.getString("Count"));
-                     
-                     String aud_id = Audit.getString("Aud_ID");
-                     int noofseats =  Integer.parseInt(Audit.getString("NoofSeats"));
-                     String status = Audit.getString("Status");
-                     int count =  Integer.parseInt(Audit.getString("Count"));
-                     if(Maxseat<=noofseats)
-                     {
-           //if status is n and maxseats required by events is lesser or equal than auditorium then it books the auditorium;
-                         if(status=="N")
-                         {
-                             String query = "insert into AHASE (Aud_ID,Event_ID) " +
-                                     "values (?,?)";
-                             try {
-                                 
-                                 
-                                 preparedStatement = myConn.prepareStatement(query);
-                                 
-                                 preparedStatement.setString(1,aud_id);
-                                 preparedStatement.setString(2,eventid);
-                                 
-                                 
-                                 
-                                 // updates the new status of auditoriums;
-                                 int rowCount = preparedStatement.executeUpdate();
+                              
                                  PreparedStatement prpred2;
-                                   prpred2 = myConn.prepareStatement("update Auditoriums set status=Y ");
-                                   prpred2.executeQuery();
+                                   prpred2 = myConn.prepareStatement("update Auditoriums set status= \"Y\" where Aud_ID = \""+aud_id+"\"");
+                                   prpred2.executeUpdate();
+                                   insertintoEvent();
+                                 try {
+                                     getConnectiondb();
+                                 } catch (ClassNotFoundException ex) {
+                                     Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
+                                 }
+                                   String query = "insert into AHASE (Aud_ID,Event_ID) " +
+                                     "values (?,?)";
+                                    preparedStatement = myConn.prepareStatement(query);
+                                      preparedStatement.setString(1,aud_id);
+                                 preparedStatement.setString(2,eventid);
+                                  // updates the new status of auditoriums;
+                                 int rowCount = preparedStatement.executeUpdate();
+                                   
+                                   
+                                   
                                     
                              }catch (SQLException ex) {
                                  Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
@@ -531,22 +466,157 @@ getConnectiondb();
                                  } catch (SQLException ex) {
                                      Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
                                  }
-                             }
+                             }   
+    }
+    
+    private void addeventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addeventActionPerformed
+        // TODO add your handling code here:
+       
+           sTime = starttimeval.getText();
+       // eTime = endtimeval.getText();
+         Date date1 = null;
+         Date date2 = null;
+          SimpleDateFormat formatter = null;
+           Time time1 = null;
+        try{
+         try {
+            //for stime and etime formatting
+    SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
+     date1 = null;
+         date1 = sdf.parse(sTime);   
+         time1 = new Time(date1.getTime());
+    System.out.println(formatter.format(date1));  
+        // date2 = sdf.parse(eTime);
+     } catch (ParseException ex) {
+        Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
+    }
+        }
+        catch(Exception e)
+        {
+            
+        }
+   System.out.println("time is : " +(sTime));
+       System.out.println("Aud.BookAuditorium.addeventActionPerformed()"+time1);
+            
+        
+    }//GEN-LAST:event_addeventActionPerformed
+
+    private void bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookActionPerformed
+        // TODO add your handling code here:
+         ResultSet Audit = null ;
+         ResultSet ahase;
+         String eventid;
+         int flag = 0;
+         Time time12 = null;
+         eventid = eventidval.getText();
+        eName = eventnameval.getText();
+        Maxseat = Integer.parseInt(maxseatsval.getText());
+       sTime = starttimeval.getText();
+       // eTime = endtimeval.getText();
+         Date date1 = null;
+         Date date2 = null;
+         try {
+                Date dateOfEvent = dateval.getDate();
+java.sql.Date sqlDateofevnt = new java.sql.Date(dateOfEvent.getTime());
+         try {
+            //for stime and etime formatting
+    DateFormat sdf = new SimpleDateFormat("hh:mm");
+     date1 = null;
+       date2 = null;
+         date1 = sdf.parse(sTime);
+        // date2 = sdf.parse(eTime);
+     } catch (ParseException ex) {
+        Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
+    }
+         
+     time12 = new Time(date1.getTime());
+     //Time time2 = new Time(date2.getTime());
+
+getConnectiondb();
+         } catch (SQLException ex) {
+             Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (ClassNotFoundException ex) {
+             Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
+         }
+
+        PreparedStatement query1 = null;
+     PreparedStatement  query2 = null; 
+         try {
+             query1 = myConn.prepareStatement("Select * from Auditoriums");
+           query2 = myConn.prepareStatement("Select * from AHASE");
+         } catch (SQLException ex) {
+             Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
+         }
+     
+         try {
+             Audit = query1.executeQuery();
+               ahase = query2.executeQuery();
+         } catch (SQLException ex) {
+             Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
+         }
+        
+
+   
+     
+         
+             try {
+                 while(Audit.next())
+                 {
+//                System.out.print(Audit.getString("Aud_ID"));
+//                 System.out.print(" , ");
+//                System.out.print(Audit.getString("NoofSeats"));
+//                  System.out.print(" , ");
+//                System.out.print(Audit.getString("Status"));
+//                  System.out.print(" , ");
+//                 System.out.print(Audit.getString("Count"));
+                     
+                     String aud_id = Audit.getString("Aud_ID");
+                     int noofseats =  Audit.getInt("NoofSeats");
+                     String status = Audit.getString("Status");
+                     int count =  Audit.getInt("Count");
+                     if(Maxseat<=noofseats)
+                     {
+           //if status is n and maxseats required by events is lesser or equal than auditorium then it books the auditorium;
+                        if(status.equals("N"))
+                         {
+                            //insert into ahase automatically inserts in event;
+                          System.out.println(Audit.getString("NoofSeats"));
+                             insertintoAhasE(aud_id, eventid);
                              flag = 1;
                              break;
                          }
-                     //
-                         else if(status=="Y")
+                    else if(status.equals("Y"))
                          {
+                 //selecting evnt id from ahase to check which event has booked auditorium 
+//                             PreparedStatement ahasequery1 = myConn.prepareStatement("Select AHASE.Event_ID from AHASE,Events"
+//                                     + "where Aud_ID = "+"\""+aud_id+"\")");
+//                             ResultSet r2 = ahasequery1.executeQuery();
+                          PreparedStatement ahasequery = myConn.prepareStatement("Select max(EndTime) as EndTime from Events,AHASE\n" +
+                                  "where Events.Event_ID in (Select AHASE.Event_ID from AHASE,Events \n" +
+                                            "where Aud_ID =\""+aud_id+"\" )");
+                          
+                          ResultSet Event_EndTime = ahasequery.executeQuery();
+                          while(Event_EndTime.next())
+                          {
+                              System.out.println("eventend time is : "+Event_EndTime.getTime("EndTime"));
+                              System.out.println("time 2 is :"+time12);
+                              if(Event_EndTime!=null){
+                              if(Event_EndTime.getTime("EndTime").before(time12))
+                              {
+                                  insertintoAhasE(aud_id, eventid);
+                                  flag=1;                                   
+                              }else {
+                                  flag = 0;
+                              }
+                              }
                              
-                             
-                             
+                         }
                          }
                          
                          
                          
                          
-                     }
+                    }
                      
                  }
                  if(flag==0)
@@ -617,6 +687,10 @@ while(rs.next()) {
            this.setVisible(false);
         
     }//GEN-LAST:event_show1ActionPerformed
+
+    private void eventidvalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventidvalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eventidvalActionPerformed
 
     /**
      * @param args the command line arguments
