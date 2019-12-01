@@ -1,5 +1,14 @@
 package cie;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -16,6 +25,27 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
+          getContentPane().setBackground(new java.awt.Color(1,1,1));
+    }
+    
+    
+        Connection myConn = null;
+        Statement myStmt = null;
+        ResultSet myRs = null;
+        PreparedStatement preparedStatement;
+    /**
+     * Creates new form BookAuditorium
+     */
+   void getConnectiondb() throws SQLException, ClassNotFoundException{
+        // TODO code application logic here
+       
+      String user = "root";
+      String pass = "test";
+
+      myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cie_book", user, pass);
+       
+
+       
     }
 
     /**
@@ -41,26 +71,32 @@ public class login extends javax.swing.JFrame {
             }
         });
 
-        login.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        login.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 36)); // NOI18N
+        login.setForeground(new java.awt.Color(254, 254, 254));
         login.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         login.setText("LOGIN");
 
-        username1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        username1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        username1.setForeground(new java.awt.Color(254, 254, 254));
         username1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         username1.setText("UserName");
 
-        password.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        password.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        password.setForeground(new java.awt.Color(254, 254, 254));
         password.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         password.setText("Password");
 
-        username.setText("                                ");
+        username.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        username.setForeground(new java.awt.Color(254, 254, 254));
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameActionPerformed(evt);
             }
         });
 
-        login1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        login1.setBackground(new java.awt.Color(45, 99, 95));
+        login1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        login1.setForeground(new java.awt.Color(254, 254, 254));
         login1.setText("LOGIN");
         login1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +104,8 @@ public class login extends javax.swing.JFrame {
             }
         });
 
+        password1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        password1.setForeground(new java.awt.Color(254, 254, 254));
         password1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 password1ActionPerformed(evt);
@@ -78,42 +116,44 @@ public class login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(72, 72, 72)
+                        .addComponent(password1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(username1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63)
+                        .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(181, 181, 181))
             .addGroup(layout.createSequentialGroup()
-                .addGap(164, 164, 164)
-                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(username1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(password1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(250, 250, 250)
-                .addComponent(login1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(177, 177, 177)
+                        .addComponent(login1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(228, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(28, 28, 28)
                 .addComponent(login)
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(username1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(password1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(10, 10, 10)
-                .addComponent(login1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(password1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
+                .addComponent(login1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         pack();
@@ -128,8 +168,54 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameActionPerformed
 
     private void login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login1ActionPerformed
-        new examDetails().setVisible(true);
-        this.setVisible(false);// TODO add your handling code here:
+      
+//        String selectlogin =     ( "SELECT * FROM login");
+// 
+//    String entereduser = username.getText();
+//        String enteredpass = password1.getPassword().toString();
+//   
+//               
+//                String user;
+//                 String pass;
+                new examDetails().setVisible(true);
+                            this.setVisible(false);
+                             
+                 
+//        try {
+//            getConnectiondb();
+//            Statement stgetlogin  = myConn.createStatement();
+//            ResultSet rtgetlogin = stgetlogin.executeQuery(selectlogin);
+//               while(rtgetlogin.next())
+//               {
+//                  user = rtgetlogin.getString("username");
+//                   pass = rtgetlogin.getString("password");
+//                   System.out.println("user,  "+user+", pass "+pass);
+//                   System.out.println("enteruser , "+entereduser+", passentered "+enteredpass);
+//                   if(entereduser.equals(user))
+//                   {
+//                    new examDetails().setVisible(true);
+//                            this.setVisible(false);
+//                            break;  
+//                       if(enteredpass.equals(pass))
+//                       {
+//                            new examDetails().setVisible(true);
+//                            this.setVisible(false);
+//                            break;
+//                       }
+                   //}
+           //    }
+             
+               
+               
+        
+       
+//               } catch (SQLException ex) {
+//            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+
+// TODO add your handling code here:
     }//GEN-LAST:event_login1ActionPerformed
 
     private void password1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password1ActionPerformed

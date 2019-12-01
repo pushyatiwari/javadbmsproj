@@ -50,6 +50,7 @@ public class ShowExam extends javax.swing.JFrame {
      */
     public ShowExam() {
         initComponents();
+          getContentPane().setBackground(new java.awt.Color(1,1,1));
     }
     
     void populate()
@@ -140,10 +141,14 @@ while(rs.next()) {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        showexam.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        showexam.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 48)); // NOI18N
+        showexam.setForeground(new java.awt.Color(254, 254, 254));
         showexam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         showexam.setText("EXAMS");
 
+        back.setBackground(new java.awt.Color(45, 99, 95));
+        back.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        back.setForeground(new java.awt.Color(254, 254, 254));
         back.setText("BACK");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,10 +156,16 @@ while(rs.next()) {
             }
         });
 
+        textarea1.setBackground(new java.awt.Color(1, 1, 1));
         textarea1.setColumns(20);
+        textarea1.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
+        textarea1.setForeground(new java.awt.Color(254, 254, 254));
         textarea1.setRows(5);
         jScrollPane1.setViewportView(textarea1);
 
+        jButton1.setBackground(new java.awt.Color(45, 99, 95));
+        jButton1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(254, 254, 254));
         jButton1.setText("BOOK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,6 +173,9 @@ while(rs.next()) {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(45, 99, 95));
+        jButton2.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(254, 254, 254));
         jButton2.setText("SHOW");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,17 +189,17 @@ while(rs.next()) {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(showexam, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(49, 49, 49)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(557, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -204,7 +218,7 @@ while(rs.next()) {
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addComponent(back)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

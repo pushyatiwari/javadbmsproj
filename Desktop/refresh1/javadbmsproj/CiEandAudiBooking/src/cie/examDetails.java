@@ -54,7 +54,7 @@ public class examDetails extends javax.swing.JFrame {
     
     public examDetails() {
         initComponents();
-          getContentPane().setBackground(new java.awt.Color(20, 16, 89));
+          getContentPane().setBackground(new java.awt.Color(1, 1, 1));
     }
 
     /**
@@ -102,37 +102,43 @@ public class examDetails extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         exam.setFont(new java.awt.Font("DejaVu Serif", 3, 48)); // NOI18N
-        exam.setForeground(new java.awt.Color(39, 229, 217));
+        exam.setForeground(new java.awt.Color(254, 254, 254));
         exam.setText("Examination Details");
 
         courseid.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        courseid.setForeground(new java.awt.Color(39, 229, 217));
+        courseid.setForeground(new java.awt.Color(254, 254, 254));
         courseid.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         courseid.setText("Course ID");
 
         coursename.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        coursename.setForeground(new java.awt.Color(39, 229, 217));
+        coursename.setForeground(new java.awt.Color(254, 254, 254));
         coursename.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         coursename.setText("Course Name");
 
         time.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        time.setForeground(new java.awt.Color(39, 229, 217));
+        time.setForeground(new java.awt.Color(254, 254, 254));
         time.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         time.setText("Start Time");
 
         date.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        date.setForeground(new java.awt.Color(39, 229, 217));
+        date.setForeground(new java.awt.Color(254, 254, 254));
         date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         date.setText("Date");
 
+        courseidval.setForeground(new java.awt.Color(254, 254, 254));
         courseidval.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 courseidvalActionPerformed(evt);
             }
         });
 
+        coursenameval.setForeground(new java.awt.Color(254, 254, 254));
+
+        stimeval.setForeground(new java.awt.Color(254, 254, 254));
+
+        showexam.setBackground(new java.awt.Color(45, 99, 95));
         showexam.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        showexam.setForeground(new java.awt.Color(39, 229, 217));
+        showexam.setForeground(new java.awt.Color(254, 254, 254));
         showexam.setText("SHOW EXAM");
         showexam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,8 +146,9 @@ public class examDetails extends javax.swing.JFrame {
             }
         });
 
+        save.setBackground(new java.awt.Color(45, 99, 95));
         save.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        save.setForeground(new java.awt.Color(39, 229, 217));
+        save.setForeground(new java.awt.Color(254, 254, 254));
         save.setText("SAVE");
         save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,8 +156,9 @@ public class examDetails extends javax.swing.JFrame {
             }
         });
 
+        book.setBackground(new java.awt.Color(45, 99, 95));
         book.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        book.setForeground(new java.awt.Color(39, 229, 217));
+        book.setForeground(new java.awt.Color(254, 254, 254));
         book.setText("BOOK");
         book.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,8 +166,9 @@ public class examDetails extends javax.swing.JFrame {
             }
         });
 
+        modclass.setBackground(new java.awt.Color(45, 99, 95));
         modclass.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        modclass.setForeground(new java.awt.Color(39, 229, 217));
+        modclass.setForeground(new java.awt.Color(254, 254, 254));
         modclass.setText("Modify Classroom Details");
         modclass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,8 +176,9 @@ public class examDetails extends javax.swing.JFrame {
             }
         });
 
+        modstud.setBackground(new java.awt.Color(45, 99, 95));
         modstud.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        modstud.setForeground(new java.awt.Color(39, 229, 217));
+        modstud.setForeground(new java.awt.Color(254, 254, 254));
         modstud.setText("Modify Student Details");
         modstud.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,15 +187,18 @@ public class examDetails extends javax.swing.JFrame {
         });
 
         time1.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        time1.setForeground(new java.awt.Color(39, 229, 217));
+        time1.setForeground(new java.awt.Color(254, 254, 254));
         time1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         time1.setText("End Time");
 
+        etimeval.setForeground(new java.awt.Color(254, 254, 254));
         etimeval.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 etimevalActionPerformed(evt);
             }
         });
+
+        dateval.setForeground(new java.awt.Color(254, 254, 254));
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -1,5 +1,14 @@
 package cie;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -16,8 +25,29 @@ public class ModifyClassroom extends javax.swing.JFrame {
      */
     public ModifyClassroom() {
         initComponents();
+          getContentPane().setBackground(new java.awt.Color(1,1,1));
     }
 
+    Connection myConn = null;
+        Statement myStmt = null;
+        ResultSet myRs = null;
+        PreparedStatement preparedStatement;
+    /**
+     * Creates new form BookAuditorium
+     */
+   void getConnectiondb() throws SQLException, ClassNotFoundException{
+        // TODO code application logic here
+       
+      String user = "root";
+      String pass = "test";
+
+      myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cie_book", user, pass);
+       
+
+       
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,48 +57,63 @@ public class ModifyClassroom extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        addclassroom = new javax.swing.JRadioButton();
         roomnumberval = new javax.swing.JTextField();
         totalseatsval = new javax.swing.JTextField();
         roomnumber = new javax.swing.JLabel();
         totalseats = new javax.swing.JLabel();
-        removeclassroom = new javax.swing.JRadioButton();
         roomnumber2 = new javax.swing.JLabel();
         roomnumber2val = new javax.swing.JTextField();
         save = new javax.swing.JButton();
         showclassroom = new javax.swing.JButton();
-        back = new java.awt.Button();
+        save1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        save2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        addclassroom.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        addclassroom.setText("ADD CLASSROOM");
-
+        roomnumberval.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        roomnumberval.setForeground(new java.awt.Color(254, 254, 254));
         roomnumberval.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 roomnumbervalActionPerformed(evt);
             }
         });
 
-        roomnumber.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        totalseatsval.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        totalseatsval.setForeground(new java.awt.Color(254, 254, 254));
+
+        roomnumber.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        roomnumber.setForeground(new java.awt.Color(254, 254, 254));
         roomnumber.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         roomnumber.setText("Room Number");
 
-        totalseats.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        totalseats.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        totalseats.setForeground(new java.awt.Color(254, 254, 254));
         totalseats.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         totalseats.setText("Total Seats");
 
-        removeclassroom.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        removeclassroom.setText("Remove classroom");
-
-        roomnumber2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        roomnumber2.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        roomnumber2.setForeground(new java.awt.Color(254, 254, 254));
         roomnumber2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         roomnumber2.setText("Room Number");
 
-        save.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        save.setText("SAVE");
+        roomnumber2val.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        roomnumber2val.setForeground(new java.awt.Color(254, 254, 254));
 
-        showclassroom.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        save.setBackground(new java.awt.Color(45, 99, 95));
+        save.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        save.setForeground(new java.awt.Color(254, 254, 254));
+        save.setText("Remove");
+        save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveActionPerformed(evt);
+            }
+        });
+
+        showclassroom.setBackground(new java.awt.Color(45, 99, 95));
+        showclassroom.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        showclassroom.setForeground(new java.awt.Color(254, 254, 254));
         showclassroom.setText("Show classroom");
         showclassroom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,11 +121,31 @@ public class ModifyClassroom extends javax.swing.JFrame {
             }
         });
 
-        back.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        back.setLabel("BACK");
-        back.addActionListener(new java.awt.event.ActionListener() {
+        save1.setBackground(new java.awt.Color(45, 99, 95));
+        save1.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        save1.setForeground(new java.awt.Color(254, 254, 254));
+        save1.setText("Save");
+        save1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backActionPerformed(evt);
+                save1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel1.setText("ADD CLASSROOM");
+
+        jLabel2.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel2.setText("Remove CLASSROOM");
+
+        save2.setBackground(new java.awt.Color(45, 99, 95));
+        save2.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        save2.setForeground(new java.awt.Color(254, 254, 254));
+        save2.setText("Back");
+        save2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                save2ActionPerformed(evt);
             }
         });
 
@@ -90,67 +155,71 @@ public class ModifyClassroom extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(262, 262, 262)
+                        .addComponent(roomnumber2val, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(totalseats, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(removeclassroom)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addclassroom, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addComponent(roomnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(roomnumberval, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                                    .addComponent(totalseatsval)))
+                                .addGap(60, 60, 60)
+                                .addComponent(roomnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(roomnumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(34, 34, 34)
-                                        .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(showclassroom))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(65, 65, 65)
-                                        .addComponent(roomnumber2val, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
-                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                                .addGap(53, 53, 53)
+                                .addComponent(totalseats, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(42, 42, 42)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(totalseatsval, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(roomnumberval, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(85, 85, 85)
+                                .addComponent(save, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(roomnumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(104, 104, 104)
+                        .addComponent(showclassroom)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(save1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))
+                    .addComponent(save2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(roomnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomnumberval, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(totalseats, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(totalseatsval, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(save1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(addclassroom, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(roomnumberval, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-                            .addComponent(roomnumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(totalseats, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(totalseatsval, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(removeclassroom, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(roomnumber2val, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(roomnumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(42, 42, 42)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(showclassroom, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(57, 57, 57)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(showclassroom, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(save2, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         pack();
@@ -160,14 +229,95 @@ public class ModifyClassroom extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_showclassroomActionPerformed
 
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-       new examDetails().setVisible(true);
-           this.setVisible(false); // TODO add your handling code here:
-    }//GEN-LAST:event_backActionPerformed
-
     private void roomnumbervalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roomnumbervalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_roomnumbervalActionPerformed
+
+    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
+        // TODO add your handling code here:
+               int room_no;
+        room_no = Integer.parseInt(roomnumber2val.getText());
+        
+         try {
+             getConnectiondb();
+             String sql = "Delete from Classroom_status  where room_no = ?";
+            PreparedStatement pst = myConn.prepareStatement(sql);
+   pst.setInt(1, room_no);
+                   boolean rows1 = pst.execute();
+                   
+         } catch (SQLException ex) { 
+            Logger.getLogger(ModifyClassroom.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ModifyClassroom.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        
+        
+    }//GEN-LAST:event_saveActionPerformed
+void insertclass() 
+    {
+         String room_no;
+         int seats;
+        int syear;
+       room_no = roomnumberval.getText();
+        seats = Integer.parseInt(totalseatsval.getText());
+       
+       
+               
+         String query = "insert into Classroom_status(room_no,TotalSeat, Status) " + 
+                                   "values (?,?,?)"; 
+        
+      String status = "N";
+ 
+      try {
+        getConnectiondb();
+
+         preparedStatement = myConn.prepareStatement(query);
+preparedStatement.setString(1,room_no);
+         preparedStatement.setInt(2,seats);
+         preparedStatement.setString(3,status);
+         
+         
+         
+
+         // Execute statement and return the number of rows affected
+         int rowCount = preparedStatement.executeUpdate();
+         System.out.println("Number of rows affected: " + rowCount);
+      } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ModifyClassroom.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ModifyClassroom.class.getName()).log(Level.SEVERE, null, ex);
+        }  finally {
+          
+             try {
+                 preparedStatement.close();
+                  myConn.close();
+             } catch (SQLException ex) {
+                 Logger.getLogger(ModifyClassroom.class.getName()).log(Level.SEVERE, null, ex);
+             }
+           
+               
+         
+        
+        
+      
+     }
+    }
+    private void save1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save1ActionPerformed
+        // TODO add your handling code here:
+        
+        insertclass();
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_save1ActionPerformed
+
+    private void save2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save2ActionPerformed
+        // TODO add your handling code here:
+              new examDetails().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_save2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,15 +354,18 @@ public class ModifyClassroom extends javax.swing.JFrame {
         });
     }
 
+ 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton addclassroom;
-    private java.awt.Button back;
-    private javax.swing.JRadioButton removeclassroom;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel roomnumber;
     private javax.swing.JLabel roomnumber2;
     private javax.swing.JTextField roomnumber2val;
     private javax.swing.JTextField roomnumberval;
     private javax.swing.JButton save;
+    private javax.swing.JButton save1;
+    private javax.swing.JButton save2;
     private javax.swing.JButton showclassroom;
     private javax.swing.JLabel totalseats;
     private javax.swing.JTextField totalseatsval;

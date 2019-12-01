@@ -60,8 +60,78 @@ public class BookAuditorium extends javax.swing.JFrame {
     }
     public BookAuditorium() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(1,1,1));
+        refresh();
     }
 
+    
+     void refresh()
+    {
+        
+         //updating every auditoruims to N
+              try {
+            getConnectiondb();
+               String getaudid = ("SELECT * FROM Auditoriums");
+             Statement stgetaudid = myConn.createStatement();
+
+ResultSet rsgetaudid = stgetaudid.executeQuery(getaudid);
+        while(rsgetaudid.next())
+        {
+           String aud_id = rsgetaudid.getString("Aud_ID");
+            System.out.println("audid = "+aud_id);
+             String updateaud = "update Auditoriums set status = \"N\" where Aud_ID = ?";
+            PreparedStatement pst1 = myConn.prepareStatement(updateaud);
+   pst1.setString(1, aud_id);
+   
+
+
+   pst1.execute();
+
+
+        }
+          
+        } catch (SQLException ex) {
+            Logger.getLogger(ModifyEvents.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ModifyEvents.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+         try {
+             getConnectiondb();
+               //select aud_id from ahase
+             
+             
+             String sql = ("SELECT * FROM AHASE");
+             Statement st = myConn.createStatement();
+
+ResultSet rs = st.executeQuery(sql);
+        while(rs.next())
+        {
+           String aud_id = rs.getString("Aud_ID");
+             System.out.println("final audid = "+aud_id);
+            String updateaud = "update Auditoriums set status = \"Y\" where Aud_ID = ?";
+            PreparedStatement pst = myConn.prepareStatement(updateaud);
+   pst.setString(1, aud_id);
+    pst.execute();
+           
+
+
+        }
+    
+
+
+ 
+         } catch (SQLException ex) {
+             Logger.getLogger(ModifyEvents.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (ClassNotFoundException ex) {
+             Logger.getLogger(ModifyEvents.class.getName()).log(Level.SEVERE, null, ex);
+         }
+      
+    }
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -95,30 +165,30 @@ public class BookAuditorium extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(253, 145, 145));
 
-        jPanel1.setBackground(new java.awt.Color(20, 27, 93));
+        jPanel1.setBackground(new java.awt.Color(1, 1, 1));
 
         bookauditorium.setFont(new java.awt.Font("DejaVu Serif", 3, 48)); // NOI18N
-        bookauditorium.setForeground(new java.awt.Color(39, 229, 217));
+        bookauditorium.setForeground(new java.awt.Color(254, 254, 254));
         bookauditorium.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bookauditorium.setText("BOOK AUDITORIUM");
 
         eventname.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        eventname.setForeground(new java.awt.Color(39, 229, 217));
+        eventname.setForeground(new java.awt.Color(254, 254, 254));
         eventname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         eventname.setText("Event Name");
 
         jLabel3.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(39, 229, 217));
+        jLabel3.setForeground(new java.awt.Color(254, 254, 254));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Date");
 
         starttime.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        starttime.setForeground(new java.awt.Color(39, 229, 217));
+        starttime.setForeground(new java.awt.Color(254, 254, 254));
         starttime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         starttime.setText("Start Time");
 
         endtime.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        endtime.setForeground(new java.awt.Color(39, 229, 217));
+        endtime.setForeground(new java.awt.Color(254, 254, 254));
         endtime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         endtime.setText("End Time");
 
@@ -136,9 +206,9 @@ public class BookAuditorium extends javax.swing.JFrame {
         endtimeval.setFont(new java.awt.Font("Courier 10 Pitch", 1, 24)); // NOI18N
         endtimeval.setForeground(new java.awt.Color(1, 1, 1));
 
-        book.setBackground(new java.awt.Color(20, 16, 89));
+        book.setBackground(new java.awt.Color(45, 99, 95));
         book.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        book.setForeground(new java.awt.Color(39, 229, 217));
+        book.setForeground(new java.awt.Color(254, 254, 254));
         book.setText("BOOK");
         book.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,9 +216,9 @@ public class BookAuditorium extends javax.swing.JFrame {
             }
         });
 
-        addevent.setBackground(new java.awt.Color(20, 16, 89));
+        addevent.setBackground(new java.awt.Color(45, 99, 95));
         addevent.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        addevent.setForeground(new java.awt.Color(39, 229, 217));
+        addevent.setForeground(new java.awt.Color(254, 254, 254));
         addevent.setText("ADD EVENT");
         addevent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,9 +226,9 @@ public class BookAuditorium extends javax.swing.JFrame {
             }
         });
 
-        show.setBackground(new java.awt.Color(20, 16, 89));
+        show.setBackground(new java.awt.Color(45, 99, 95));
         show.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        show.setForeground(new java.awt.Color(39, 229, 217));
+        show.setForeground(new java.awt.Color(254, 254, 254));
         show.setText("SHOW EVENTS");
         show.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,9 +236,9 @@ public class BookAuditorium extends javax.swing.JFrame {
             }
         });
 
-        modifyevents.setBackground(new java.awt.Color(20, 16, 89));
+        modifyevents.setBackground(new java.awt.Color(45, 99, 95));
         modifyevents.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        modifyevents.setForeground(new java.awt.Color(39, 229, 217));
+        modifyevents.setForeground(new java.awt.Color(254, 254, 254));
         modifyevents.setText("MODIFY EVENTS");
         modifyevents.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,9 +246,9 @@ public class BookAuditorium extends javax.swing.JFrame {
             }
         });
 
-        modifyauditorium.setBackground(new java.awt.Color(20, 16, 89));
+        modifyauditorium.setBackground(new java.awt.Color(45, 99, 95));
         modifyauditorium.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        modifyauditorium.setForeground(new java.awt.Color(39, 229, 217));
+        modifyauditorium.setForeground(new java.awt.Color(254, 254, 254));
         modifyauditorium.setText("MODIFY AUDITORIUMS");
         modifyauditorium.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,7 +257,7 @@ public class BookAuditorium extends javax.swing.JFrame {
         });
 
         eventname1.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        eventname1.setForeground(new java.awt.Color(39, 229, 217));
+        eventname1.setForeground(new java.awt.Color(254, 254, 254));
         eventname1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         eventname1.setText("Event_ID");
 
@@ -200,16 +270,16 @@ public class BookAuditorium extends javax.swing.JFrame {
         });
 
         eventname2.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        eventname2.setForeground(new java.awt.Color(39, 229, 217));
+        eventname2.setForeground(new java.awt.Color(254, 254, 254));
         eventname2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         eventname2.setText("Max Seats Required");
 
         maxseatsval.setFont(new java.awt.Font("Courier 10 Pitch", 1, 24)); // NOI18N
         maxseatsval.setForeground(new java.awt.Color(1, 1, 1));
 
-        show1.setBackground(new java.awt.Color(20, 16, 89));
+        show1.setBackground(new java.awt.Color(45, 99, 95));
         show1.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        show1.setForeground(new java.awt.Color(39, 229, 217));
+        show1.setForeground(new java.awt.Color(254, 254, 254));
         show1.setText("SHOW AUDITORIUMS");
         show1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,31 +287,34 @@ public class BookAuditorium extends javax.swing.JFrame {
             }
         });
 
+        dateval.setForeground(new java.awt.Color(1, 1, 1));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(55, 55, 55)
-                .addComponent(addevent)
-                .addGap(56, 56, 56)
+                .addComponent(addevent, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bookauditorium, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(book, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(modifyauditorium))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(show1, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addComponent(modifyevents))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(76, 76, 76)
-                                .addComponent(show)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(97, 97, 97))
+                        .addGap(31, 31, 31)
+                        .addComponent(modifyauditorium)
+                        .addGap(39, 39, 39)
+                        .addComponent(show1, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                        .addGap(47, 47, 47)
+                        .addComponent(modifyevents)
+                        .addGap(206, 206, 206))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 203, Short.MAX_VALUE)
+                        .addComponent(book, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)
+                        .addComponent(show)
+                        .addGap(495, 495, 495))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(174, 174, 174)
+                        .addComponent(bookauditorium, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(97, 97, 97))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(273, 273, 273)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,11 +368,11 @@ public class BookAuditorium extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(endtime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(endtimeval))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addGap(54, 54, 54)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(book, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(show))
-                .addGap(39, 39, 39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addevent, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modifyauditorium, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -314,13 +387,13 @@ public class BookAuditorium extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 6, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 74, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -587,10 +660,15 @@ getConnectiondb();
                          }
                     else if(status.equals("Y"))
                          {
-                 //selecting evnt id from ahase to check which event has booked auditorium 
+                            try {
+                                //selecting evnt id from ahase to check which event has booked auditorium
 //                             PreparedStatement ahasequery1 = myConn.prepareStatement("Select AHASE.Event_ID from AHASE,Events"
 //                                     + "where Aud_ID = "+"\""+aud_id+"\")");
 //                             ResultSet r2 = ahasequery1.executeQuery();
+getConnectiondb();
+                            } catch (ClassNotFoundException ex) {
+                                Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                           PreparedStatement ahasequery = myConn.prepareStatement("Select max(EndTime) as EndTime from Events,AHASE\n" +
                                   "where Events.Event_ID in (Select AHASE.Event_ID from AHASE,Events \n" +
                                             "where Aud_ID =\""+aud_id+"\" )");
@@ -604,7 +682,9 @@ getConnectiondb();
                               if(Event_EndTime.getTime("EndTime").before(time12))
                               {
                                   insertintoAhasE(aud_id, eventid);
-                                  flag=1;                                   
+                                  
+                                  flag=1;
+                                  break;
                               }else {
                                   flag = 0;
                               }
@@ -617,6 +697,10 @@ getConnectiondb();
                          
                          
                     }
+                     if(flag==1)
+                     {
+                         break;
+                     }
                      
                  }
                  if(flag==0)
@@ -644,6 +728,43 @@ getConnectiondb();
 
     private void showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showActionPerformed
         // TODO add your handling code here:
+        
+        showEvents se = new showEvents();
+        se.setVisible(true);
+        this.setVisible(false);
+        int count = 1;
+         try {
+             getConnectiondb();
+             String sql = ("SELECT * FROM AHASE ");
+             Statement st = myConn.createStatement();
+ResultSet rs = st.executeQuery(sql);
+while(rs.next()) { 
+ 
+  String audid = rs.getString("Aud_ID"); 
+  String eid = rs.getString("Event_ID"); 
+  //select event name
+  String eventname = ("SELECT Event_Name FROM Events where Event_ID = \""+eid+"\"");
+             Statement steventname = myConn.createStatement();
+ResultSet rseventname = steventname.executeQuery(eventname);
+   while(rseventname.next()){
+         String entname = rseventname.getString("Event_Name");
+         se.textarea.append(count+++"."+" Event Name - "+entname+"  Aud_no -"+audid+"\n");
+
+   }
+ 
+ 
+}
+
+ } catch (SQLException ex) {
+             Logger.getLogger(ModifyEvents.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (ClassNotFoundException ex) {
+             Logger.getLogger(ModifyEvents.class.getName()).log(Level.SEVERE, null, ex);
+         }
+        
+        
+        
+        
+        
         
       
         
@@ -683,8 +804,35 @@ while(rs.next()) {
 
     private void show1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show1ActionPerformed
         // TODO add your handling code here:
-                new showauditoriums().setVisible(true);
+          showaudi sa =      new showaudi();
+                  sa.setVisible(true);
            this.setVisible(false);
+           
+             int count = 1;
+           try {
+             getConnectiondb();
+             String sql = ("SELECT * FROM Auditoriums ");
+             Statement st = myConn.createStatement();
+ResultSet rs = st.executeQuery(sql);
+while(rs.next()) { 
+ 
+  String Aname = rs.getString("Aud_ID");
+  int seats = rs.getInt("NoofSeats");
+   sa.textarea.append(count+++". Auditorium number "+Aname+".Total Seats -"+seats+"\n");
+
+     
+ 
+ 
+}
+
+ } catch (SQLException ex) {
+             Logger.getLogger(ModifyEvents.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (ClassNotFoundException ex) {
+             Logger.getLogger(ModifyEvents.class.getName()).log(Level.SEVERE, null, ex);
+         }
+           
+           
+           
         
     }//GEN-LAST:event_show1ActionPerformed
 

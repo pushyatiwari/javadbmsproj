@@ -39,6 +39,8 @@ public class ModifyAuditorium extends javax.swing.JFrame {
      */
     public ModifyAuditorium() {
         initComponents();
+        //[39,229,217]
+         getContentPane().setBackground(new java.awt.Color(1,1,1));
     }
        
     
@@ -73,12 +75,10 @@ public class ModifyAuditorium extends javax.swing.JFrame {
     private void initComponents() {
 
         modifyauditorium = new javax.swing.JLabel();
-        modify = new javax.swing.JRadioButton();
         auditoriumnumber = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         auditoriumnumberval = new javax.swing.JTextField();
         save = new javax.swing.JButton();
-        removeauditorium = new javax.swing.JRadioButton();
         auditoriumnumber2 = new javax.swing.JLabel();
         auditoriumnumber2val = new javax.swing.JTextField();
         delete = new javax.swing.JButton();
@@ -89,30 +89,33 @@ public class ModifyAuditorium extends javax.swing.JFrame {
         aud_countval = new javax.swing.JTextField();
         audno_val = new javax.swing.JComboBox<>();
         save1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        modifyauditorium.setFont(new java.awt.Font("DejaVu Sans", 3, 48)); // NOI18N
+        modifyauditorium.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 48)); // NOI18N
+        modifyauditorium.setForeground(new java.awt.Color(254, 254, 254));
         modifyauditorium.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         modifyauditorium.setText("MODIFY AUDITORIUM");
 
-        modify.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        modify.setText("MODIFY AUDITORIUM");
-        modify.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyActionPerformed(evt);
-            }
-        });
-
         auditoriumnumber.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        auditoriumnumber.setForeground(new java.awt.Color(254, 254, 254));
         auditoriumnumber.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         auditoriumnumber.setText("AUDITORIUM NUMBER");
 
         jLabel3.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(254, 254, 254));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("NUMBER OF SEATS");
 
+        auditoriumnumberval.setBackground(new java.awt.Color(254, 254, 254));
+        auditoriumnumberval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        auditoriumnumberval.setForeground(new java.awt.Color(1, 1, 1));
+
+        save.setBackground(new java.awt.Color(45, 99, 95));
         save.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        save.setForeground(new java.awt.Color(254, 254, 254));
         save.setText("SAVE");
         save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,19 +123,17 @@ public class ModifyAuditorium extends javax.swing.JFrame {
             }
         });
 
-        removeauditorium.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        removeauditorium.setText("REMOVE AUDITORIUM");
-        removeauditorium.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removeauditoriumActionPerformed(evt);
-            }
-        });
-
         auditoriumnumber2.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        auditoriumnumber2.setForeground(new java.awt.Color(254, 254, 254));
         auditoriumnumber2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         auditoriumnumber2.setText("AUDITORIUM NUMBER");
 
+        auditoriumnumber2val.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        auditoriumnumber2val.setForeground(new java.awt.Color(1, 1, 1));
+
+        delete.setBackground(new java.awt.Color(45, 99, 95));
         delete.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        delete.setForeground(new java.awt.Color(254, 254, 254));
         delete.setText("DELETE");
         delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,7 +141,9 @@ public class ModifyAuditorium extends javax.swing.JFrame {
             }
         });
 
+        back.setBackground(new java.awt.Color(45, 99, 95));
         back.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        back.setForeground(new java.awt.Color(254, 254, 254));
         back.setText("BACK");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,9 +152,13 @@ public class ModifyAuditorium extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(254, 254, 254));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("STATUS");
 
+        aud_statusval.setBackground(new java.awt.Color(254, 254, 254));
+        aud_statusval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        aud_statusval.setForeground(new java.awt.Color(1, 1, 1));
         aud_statusval.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aud_statusvalActionPerformed(evt);
@@ -159,23 +166,41 @@ public class ModifyAuditorium extends javax.swing.JFrame {
         });
 
         jLabel5.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(254, 254, 254));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("COUNT");
 
+        aud_countval.setBackground(new java.awt.Color(254, 254, 254));
+        aud_countval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        aud_countval.setForeground(new java.awt.Color(1, 1, 1));
+
+        audno_val.setBackground(new java.awt.Color(254, 254, 254));
         audno_val.setEditable(true);
+        audno_val.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        audno_val.setForeground(new java.awt.Color(1, 1, 1));
         audno_val.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 audno_valActionPerformed(evt);
             }
         });
 
+        save1.setBackground(new java.awt.Color(45, 99, 95));
         save1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        save1.setForeground(new java.awt.Color(254, 254, 254));
         save1.setText("ADD NEW AUDITORIUM");
         save1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 save1ActionPerformed(evt);
             }
         });
+
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel1.setText("MODIFY AUDITORIUM");
+
+        jLabel2.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel2.setText("REMOVE AUDITORIUM");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -184,56 +209,60 @@ public class ModifyAuditorium extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(auditoriumnumber, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(auditoriumnumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(166, 166, 166)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(audno_val, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(aud_countval, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(auditoriumnumberval, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(aud_statusval, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(auditoriumnumber2val, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(222, 222, 222))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(287, 287, 287)
+                                .addGap(352, 352, 352)
+                                .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(213, 213, 213)
+                                .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(71, 71, 71)
+                                .addComponent(save1, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(186, 186, 186)
                                 .addComponent(modifyauditorium, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(105, 105, 105)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(modify, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(removeauditorium)))
+                                .addGap(60, 60, 60)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(352, 352, 352)
-                                .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(50, 50, 50)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(102, 102, 102)
+                                .addComponent(auditoriumnumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(auditoriumnumber2val, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(137, 137, 137)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(auditoriumnumber, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(166, 166, 166)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(audno_val, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(aud_countval, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(auditoriumnumberval, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(aud_statusval, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(225, 225, 225)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(213, 213, 213)
-                .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
-                .addComponent(save1, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(modifyauditorium, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(modify)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(auditoriumnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -257,15 +286,15 @@ public class ModifyAuditorium extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(save1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addComponent(removeauditorium, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(32, 32, 32)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(auditoriumnumber2val, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(auditoriumnumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(auditoriumnumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(auditoriumnumber2val, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
                 .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGap(4, 4, 4)
                 .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -292,6 +321,7 @@ public class ModifyAuditorium extends javax.swing.JFrame {
              String sql = "Delete from Auditoriums  where Aud_ID = ?";
             PreparedStatement pst = myConn.prepareStatement(sql);
    pst.setString(1, aud_no2);
+   pst.execute();
          } catch (SQLException ex) {
              Logger.getLogger(ModifyAuditorium.class.getName()).log(Level.SEVERE, null, ex);
          } catch (ClassNotFoundException ex) {
@@ -346,16 +376,9 @@ public class ModifyAuditorium extends javax.swing.JFrame {
         
     }//GEN-LAST:event_saveActionPerformed
 
-    private void removeauditoriumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeauditoriumActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_removeauditoriumActionPerformed
-
-    private void modifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modifyActionPerformed
-
     private void audno_valActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_audno_valActionPerformed
         // TODO add your handling code here:
+        audno_val.setEditable(false);
         
         int no_of_seats;
                 
@@ -487,12 +510,12 @@ ResultSet rs = st.executeQuery(sql);
     public javax.swing.JComboBox<String> audno_val;
     private javax.swing.JButton back;
     private javax.swing.JButton delete;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JRadioButton modify;
     private javax.swing.JLabel modifyauditorium;
-    private javax.swing.JRadioButton removeauditorium;
     private javax.swing.JButton save;
     private javax.swing.JButton save1;
     // End of variables declaration//GEN-END:variables

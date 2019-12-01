@@ -57,7 +57,7 @@
           <Font name="DejaVu Serif" size="48" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="CIE AND AUDITORIUM BOOKING"/>
@@ -77,13 +77,13 @@
     <Component class="javax.swing.JButton" name="cie">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="59" green="10" red="14" type="rgb"/>
+          <Color blue="5f" green="63" red="2d" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="DejaVu Serif Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="CIE SEAT BOOKING"/>
       </Properties>
@@ -94,13 +94,13 @@
     <Component class="javax.swing.JButton" name="audi">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="59" green="10" red="14" type="rgb"/>
+          <Color blue="5f" green="63" red="2d" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="DejaVu Serif Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="AUDITORIUM BOOKING"/>
       </Properties>

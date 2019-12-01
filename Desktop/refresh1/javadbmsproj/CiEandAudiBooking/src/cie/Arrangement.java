@@ -3,21 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Aud;
+package cie;
+
+
 
 /**
  *
  * @author pushya
  */
-public class showauditoriums extends javax.swing.JFrame {
+public class Arrangement extends javax.swing.JFrame {
 
     /**
-     * Creates new form showauditoriums
+     * Creates new form Arrangement
      */
-    public showauditoriums() {
+    public Arrangement() {
         initComponents();
-                 getContentPane().setBackground(new java.awt.Color(1,1,1));
-
+          getContentPane().setBackground(new java.awt.Color(1,1,1));
+      
     }
 
     /**
@@ -29,27 +31,27 @@ public class showauditoriums extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        aud_jdbmsPUEntityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("aud_jdbmsPU").createEntityManager();
-        auditoriumsQuery = java.beans.Beans.isDesignTime() ? null : aud_jdbmsPUEntityManager.createQuery("SELECT a FROM Auditoriums a");
-        auditoriumsList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : auditoriumsQuery.getResultList();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        textarea = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        textarea_val = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        textarea.setColumns(20);
-        textarea.setRows(5);
-        jScrollPane1.setViewportView(textarea);
+        textarea_val.setBackground(new java.awt.Color(1, 1, 1));
+        textarea_val.setColumns(20);
+        textarea_val.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 14)); // NOI18N
+        textarea_val.setForeground(new java.awt.Color(254, 254, 254));
+        textarea_val.setRows(5);
+        jScrollPane2.setViewportView(textarea_val);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 759, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 804, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 533, Short.MAX_VALUE)
         );
 
         pack();
@@ -72,29 +74,26 @@ public class showauditoriums extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(showauditoriums.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Arrangement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(showauditoriums.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Arrangement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(showauditoriums.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Arrangement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(showauditoriums.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Arrangement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new showauditoriums().setVisible(true);
+                new Arrangement().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.persistence.EntityManager aud_jdbmsPUEntityManager;
-    private java.util.List<Aud.Auditoriums> auditoriumsList;
-    private javax.persistence.Query auditoriumsQuery;
-    private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTextArea textarea;
+    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTextArea textarea_val;
     // End of variables declaration//GEN-END:variables
 }

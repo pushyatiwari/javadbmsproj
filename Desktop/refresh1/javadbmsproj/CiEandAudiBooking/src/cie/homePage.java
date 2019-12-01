@@ -20,7 +20,7 @@ public class homePage extends javax.swing.JFrame {
      */
     public homePage() {
         initComponents();
-    getContentPane().setBackground(new java.awt.Color(20, 16, 89));
+     getContentPane().setBackground(new java.awt.Color(1,1,1));
     }
 
     /**
@@ -40,7 +40,7 @@ public class homePage extends javax.swing.JFrame {
 
         cieandaudi.setBackground(new java.awt.Color(102, 0, 102));
         cieandaudi.setFont(new java.awt.Font("DejaVu Serif", 1, 48)); // NOI18N
-        cieandaudi.setForeground(new java.awt.Color(39, 229, 217));
+        cieandaudi.setForeground(new java.awt.Color(254, 254, 254));
         cieandaudi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cieandaudi.setText("CIE AND AUDITORIUM BOOKING");
         cieandaudi.setToolTipText("");
@@ -61,9 +61,9 @@ public class homePage extends javax.swing.JFrame {
             }
         });
 
-        cie.setBackground(new java.awt.Color(20, 16, 89));
+        cie.setBackground(new java.awt.Color(45, 99, 95));
         cie.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        cie.setForeground(new java.awt.Color(39, 229, 217));
+        cie.setForeground(new java.awt.Color(254, 254, 254));
         cie.setText("CIE SEAT BOOKING");
         cie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,9 +71,9 @@ public class homePage extends javax.swing.JFrame {
             }
         });
 
-        audi.setBackground(new java.awt.Color(20, 16, 89));
+        audi.setBackground(new java.awt.Color(45, 99, 95));
         audi.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        audi.setForeground(new java.awt.Color(39, 229, 217));
+        audi.setForeground(new java.awt.Color(254, 254, 254));
         audi.setText("AUDITORIUM BOOKING");
         audi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

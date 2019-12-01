@@ -9,15 +9,13 @@ package Aud;
  *
  * @author pushya
  */
-public class showauditoriums extends javax.swing.JFrame {
+public class showaudi extends javax.swing.JFrame {
 
     /**
-     * Creates new form showauditoriums
+     * Creates new form showaudi
      */
-    public showauditoriums() {
+    public showaudi() {
         initComponents();
-                 getContentPane().setBackground(new java.awt.Color(1,1,1));
-
     }
 
     /**
@@ -29,31 +27,57 @@ public class showauditoriums extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        aud_jdbmsPUEntityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("aud_jdbmsPU").createEntityManager();
-        auditoriumsQuery = java.beans.Beans.isDesignTime() ? null : aud_jdbmsPUEntityManager.createQuery("SELECT a FROM Auditoriums a");
-        auditoriumsList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : auditoriumsQuery.getResultList();
         jScrollPane1 = new javax.swing.JScrollPane();
         textarea = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(1, 1, 1));
 
+        textarea.setBackground(new java.awt.Color(1, 1, 1));
         textarea.setColumns(20);
+        textarea.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 18)); // NOI18N
+        textarea.setForeground(new java.awt.Color(254, 254, 254));
         textarea.setRows(5);
         jScrollPane1.setViewportView(textarea);
+
+        jButton1.setBackground(new java.awt.Color(45, 99, 95));
+        jButton1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        jButton1.setText("BACK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 759, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new BookAuditorium().setVisible(true);
+        this.setVisible(false);
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -72,28 +96,26 @@ public class showauditoriums extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(showauditoriums.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(showaudi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(showauditoriums.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(showaudi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(showauditoriums.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(showaudi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(showauditoriums.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(showaudi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new showauditoriums().setVisible(true);
+                new showaudi().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.persistence.EntityManager aud_jdbmsPUEntityManager;
-    private java.util.List<Aud.Auditoriums> auditoriumsList;
-    private javax.persistence.Query auditoriumsQuery;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTextArea textarea;
     // End of variables declaration//GEN-END:variables

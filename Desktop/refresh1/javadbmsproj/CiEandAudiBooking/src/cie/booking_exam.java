@@ -19,6 +19,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /**
  *
  * @author pushya
@@ -30,6 +31,7 @@ public class booking_exam extends javax.swing.JFrame {
      */
     public booking_exam() {
         initComponents();
+          getContentPane().setBackground(new java.awt.Color(1,1,1));
     }
 
     Connection myConn = null;
@@ -67,21 +69,36 @@ public class booking_exam extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         booking_time_val = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        booking_date_val.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        booking_date_val.setForeground(new java.awt.Color(254, 254, 254));
         booking_date_val.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 booking_date_valActionPerformed(evt);
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
         jLabel1.setText("BOOK FOR DATE ");
 
+        jLabel2.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
         jLabel2.setText("BOOK");
 
+        jLabel3.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(254, 254, 254));
         jLabel3.setText("BOOK FOR TIME");
 
+        booking_time_val.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        booking_time_val.setForeground(new java.awt.Color(254, 254, 254));
+
+        jButton1.setBackground(new java.awt.Color(45, 99, 95));
+        jButton1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(254, 254, 254));
         jButton1.setText("BOOK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,46 +106,60 @@ public class booking_exam extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(45, 99, 95));
+        jButton2.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(254, 254, 254));
+        jButton2.setText("SHOW ARRANGEMENT");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(137, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(145, 145, 145)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(booking_date_val, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(booking_time_val, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(294, 294, 294))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(262, 262, 262)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(171, 171, 171)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(booking_time_val, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(booking_date_val, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(136, 136, 136)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(195, 195, 195))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(22, 22, 22)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(68, 68, 68)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(booking_date_val, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(47, 47, 47)
+                    .addComponent(jLabel1)
+                    .addComponent(booking_date_val, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(booking_time_val, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(92, 92, 92)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(244, Short.MAX_VALUE))
+                    .addComponent(booking_time_val, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(189, 189, 189))
         );
 
         pack();
@@ -185,10 +216,50 @@ ResultSet rs = st.executeQuery(sql);
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
+         String delete =     ( "delete from Classroom");
+ 
+
+        
+        
         int no_of_seats;
+        String room_no = null;
                 
          try {
              getConnectiondb();
+             
+             
+              String SQL = "DELETE FROM Classroom ";
+PreparedStatement pstmt = null;
+
+// get a connection and then in your try catch for executing your delete...
+
+pstmt = myConn.prepareStatement(SQL); 
+
+pstmt.executeUpdate();
+//updating classroom_status
+String selectroom2 =     ( "SELECT room_no FROM Classroom_status");
+ 
+ 
+               Statement stgetroom = myConn.createStatement();
+               ResultSet rtgetroom = stgetroom.executeQuery(selectroom2);
+               while(rtgetroom.next())
+               {
+                  int room = rtgetroom.getInt("room_no");
+                  String sql = "update Classroom_status set Status=?  where room_no=?";
+            PreparedStatement pst = myConn.prepareStatement(sql);
+   pst.setString(1, "N");
+  
+      pst.setInt(2, room);
+
+
+   pst.execute();
+               }
+//---
+ 
+//------
+
+             
+             
              
                 String sel = booking_date_val.getSelectedItem().toString();
              //   System.out.println("Aud.ModifyEvents.eventname_valActionPerformed()"+sel);
@@ -214,40 +285,140 @@ String dateStrReformatted = formatter.format(date1);
       
              
              System.out.println("button pressed with sTime "+stime+" sdate1" + sdate1);
-            // String sql = ("SELECT distinct(sTime) FROM Exam where date= '"+dateStrReformatted+"'");
+             //get usns
                           String selectusns = ("Select distinct(Registered.USN) from Registered,Exam\n" +
 "where Registered.CID in\n" +
 "(SELECT distinct(Course_ID) FROM Exam,Registered where Date = \""+dateStrReformatted+"\" and sTime = \""+stime+"\"and Exam.Course_ID\n" +
 "=Registered.CID) order by 'asc';");
-
+                           //get count
              String usncount =  ("select count(*) as usnc from\n" +
 "(Select distinct(Registered.USN) from Registered,Exam\n" +
 "where Registered.CID in\n" +
 "(SELECT distinct(Course_ID) FROM Exam,Registered where Date = \""+dateStrReformatted+"\" and sTime = \""+stime+"\"and Exam.Course_ID\n" +
 "=Registered.CID) order by 'asc') as usncount");
-             
+             //selecting courseid
+           
              
              Statement st = myConn.createStatement();
  Statement st2 = myConn.createStatement();
 ResultSet rsusns = st.executeQuery(selectusns);
 ResultSet rsusncount = st2.executeQuery(usncount);
  while(rsusncount.next()){
-        System.out.println("usn count = "+rsusncount.getInt("usnc"));
+         int getusncount = rsusncount.getInt("usnc");
         }
+ System.out.println("cid");
+       int row = -1;
+       int col = 0;
         while(rsusns.next())
         {
+            
                 String usns = rsusns.getString("USN");
-            System.out.println(usns);
+           // System.out.println(usns);
             
-            
-         
-      
-        }
-       
-    
-
-
+        String selectcourse =     ( "SELECT distinct(CID) FROM Registered,Exam\n"+
+ "where Exam.Date = \""+dateStrReformatted+"\" and Exam.sTime = \""+stime+"\" and "+
+ "Exam.Course_ID = Registered.CID and Registered.USN = \""+usns+"\"");
  
+ 
+               Statement stgetcourse = myConn.createStatement();
+               ResultSet rtgetcourse = stgetcourse.executeQuery(selectcourse);
+               if(rtgetcourse.next())
+               {
+                  String cid = rtgetcourse.getString("CID");
+                  
+                  
+                   
+                   
+                   
+                    String classroomquery = "insert into Classroom (USN, room_no, row,col,timeslot,course_id,date) " + 
+                                   "values (?,?,?,?,?,?,?)"; 
+                    
+        //select room no
+         String selectroom =      ( "SELECT room_no FROM Classroom_status\n"+
+ "where Status = \"N\"");
+          Statement stgetclassroom = myConn.createStatement();
+               ResultSet rtgetclassroom = stgetcourse.executeQuery(selectroom);
+               if(rtgetclassroom.next())
+                  {
+                      room_no =  rtgetclassroom.getString("room_no");
+                  
+                  }
+              if(row!=10)
+              {
+                  row++;
+              }
+              else if(row==10&&col!=4)
+              {
+                  row = 0;
+                  col++;
+              }
+              else if(row==10&&col==4)
+              {
+                  if(rtgetclassroom.next())
+                  {
+                      
+                      //update classroom_status to yes
+                      // insert into classroom
+                          
+            
+             String sql = "update Classroom_status set Status=?  where room_no=?";
+            PreparedStatement pst = myConn.prepareStatement(sql);
+   pst.setString(1, "Y");
+  
+      pst.setString(2, room_no);
+
+
+   pst.execute();
+                           
+                           
+                   
+                   //ending insert
+                      
+                      row = 0;
+                      col = 0;
+                      room_no =  rtgetclassroom.getString("room_no");
+                  
+                  }}
+              
+     
+
+      try {
+        getConnectiondb();
+
+         preparedStatement = myConn.prepareStatement(classroomquery);
+
+         preparedStatement.setString(1,usns);
+         preparedStatement.setString(2,room_no);
+          preparedStatement.setInt(3,row);
+         preparedStatement.setInt(4,col );
+          preparedStatement.setTime(5,stime);
+          preparedStatement.setString(6,cid);
+          preparedStatement.setString(7,dateStrReformatted);
+          
+         
+          System.out.println("cie.booking_exam)"+row+", "+cid+", "+usns+"," +room_no);
+
+         // Execute statement and return the number of rows affected
+         int rowCount = preparedStatement.executeUpdate();
+         System.out.println("Number of rows affected: " + rowCount);
+                  
+                   
+                   
+                   
+              //----------------------     
+               }    catch (SQLException ex) {
+                        Logger.getLogger(booking_exam.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (ClassNotFoundException ex) {
+                        Logger.getLogger(booking_exam.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+      
+      
+      
+      
+      //-----
+        }}
+             
+       
          } catch (ParseException ex) {
             Logger.getLogger(booking_exam.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -257,10 +428,61 @@ ResultSet rsusncount = st2.executeQuery(usncount);
         }
         
         
+         
         
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+   
+    
+    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       Arrangement arr = new Arrangement();
+       arr.setVisible(true);
+       this.setVisible(false);
+         try {
+            // TODO add your handling code here:
+            getConnectiondb();
+        } catch (SQLException ex) {
+            Logger.getLogger(booking_exam.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(booking_exam.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String USN;
+        int room_no,row,col;
+        
+        
+        
+        
+        String arrange =     ( "SELECT USN,room_no,row,col FROM Classroom\n" +
+"order by room_no,col,row;");
+ 
+ 
+               int count = 1;
+              
+        try {
+            Statement starrange = myConn.createStatement();
+             ResultSet rtgetarrange = starrange.executeQuery(arrange);
+        
+               while(rtgetarrange.next())
+               {
+                  USN= rtgetarrange.getString("USN");
+                   room_no= rtgetarrange.getInt("room_no");
+                   row= rtgetarrange.getInt("row");
+                    col= rtgetarrange.getInt("col");
+                    arr.textarea_val.setEditable(false);
+                 arr.textarea_val.append(count++ +"  "+USN+"  "+room_no+"  "+row+"  "+col+"\n");
+               }
+        } catch (SQLException ex) {
+            Logger.getLogger(booking_exam.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+       
+        
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -301,8 +523,13 @@ ResultSet rsusncount = st2.executeQuery(usncount);
     public javax.swing.JComboBox<String> booking_date_val;
     public javax.swing.JComboBox<String> booking_time_val;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
+//selecting 
+//SELECT USN,room_no,row,col FROM cie_book.Classroom
+//
+//order by room_no,col,row;

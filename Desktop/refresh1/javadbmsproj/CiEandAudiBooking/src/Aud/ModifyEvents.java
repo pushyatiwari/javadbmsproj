@@ -53,9 +53,77 @@ public class ModifyEvents extends javax.swing.JFrame {
     public ModifyEvents() {
         initComponents();
         //[20,27,93]   
-        getContentPane().setBackground(new java.awt.Color(20, 27, 93));
+               getContentPane().setBackground(new java.awt.Color(1,1,1));
+
 
     }
+    void refresh()
+    {
+        
+         //updating every auditoruims to N
+              try {
+            getConnectiondb();
+               String getaudid = ("SELECT * FROM Auditoriums");
+             Statement stgetaudid = myConn.createStatement();
+
+ResultSet rsgetaudid = stgetaudid.executeQuery(getaudid);
+        while(rsgetaudid.next())
+        {
+           String aud_id = rsgetaudid.getString("Aud_ID");
+            System.out.println("audid = "+aud_id);
+             String updateaud = "update Auditoriums set status = \"N\" where Aud_ID = ?";
+            PreparedStatement pst1 = myConn.prepareStatement(updateaud);
+   pst1.setString(1, aud_id);
+   
+
+
+   pst1.execute();
+
+
+        }
+          
+        } catch (SQLException ex) {
+            Logger.getLogger(ModifyEvents.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ModifyEvents.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+         try {
+             getConnectiondb();
+               //select aud_id from ahase
+             
+             
+             String sql = ("SELECT * FROM AHASE");
+             Statement st = myConn.createStatement();
+
+ResultSet rs = st.executeQuery(sql);
+        while(rs.next())
+        {
+           String aud_id = rs.getString("Aud_ID");
+             System.out.println("final audid = "+aud_id);
+            String updateaud = "update Auditoriums set status = \"Y\" where Aud_ID = ?";
+            PreparedStatement pst = myConn.prepareStatement(updateaud);
+   pst.setString(1, aud_id);
+    pst.execute();
+           
+
+
+        }
+    
+
+
+ 
+         } catch (SQLException ex) {
+             Logger.getLogger(ModifyEvents.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (ClassNotFoundException ex) {
+             Logger.getLogger(ModifyEvents.class.getName()).log(Level.SEVERE, null, ex);
+         }
+      
+    }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,7 +134,6 @@ public class ModifyEvents extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        modifyevent = new javax.swing.JRadioButton();
         eventname = new javax.swing.JLabel();
         date = new javax.swing.JLabel();
         starttime = new javax.swing.JLabel();
@@ -74,7 +141,6 @@ public class ModifyEvents extends javax.swing.JFrame {
         starttimeval = new javax.swing.JTextField();
         endtimeval = new javax.swing.JTextField();
         save = new javax.swing.JButton();
-        deleteevent = new javax.swing.JRadioButton();
         eventname2 = new javax.swing.JLabel();
         eventname2val = new javax.swing.JTextField();
         delete = new javax.swing.JButton();
@@ -83,40 +149,35 @@ public class ModifyEvents extends javax.swing.JFrame {
         dateval = new com.toedter.calendar.JDateChooser();
         eventid = new javax.swing.JTextField();
         eventname1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        back1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        modifyevent.setFont(new java.awt.Font("DejaVu Serif", 1, 48)); // NOI18N
-        modifyevent.setForeground(new java.awt.Color(39, 229, 217));
-        modifyevent.setText("MODIFY EVENT");
-        modifyevent.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyeventActionPerformed(evt);
-            }
-        });
-
-        eventname.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        eventname.setForeground(new java.awt.Color(39, 229, 217));
+        eventname.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        eventname.setForeground(new java.awt.Color(254, 254, 254));
         eventname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         eventname.setText("Event Name");
 
-        date.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        date.setForeground(new java.awt.Color(39, 229, 217));
+        date.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        date.setForeground(new java.awt.Color(254, 254, 254));
         date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         date.setText("Date");
 
-        starttime.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        starttime.setForeground(new java.awt.Color(39, 229, 217));
+        starttime.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        starttime.setForeground(new java.awt.Color(254, 254, 254));
         starttime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         starttime.setText("Start Time ");
 
-        endtime.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        endtime.setForeground(new java.awt.Color(39, 229, 217));
+        endtime.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        endtime.setForeground(new java.awt.Color(254, 254, 254));
         endtime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         endtime.setText("End Time");
 
-        save.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        save.setForeground(new java.awt.Color(39, 229, 217));
+        save.setBackground(new java.awt.Color(45, 99, 95));
+        save.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        save.setForeground(new java.awt.Color(254, 254, 254));
         save.setText("SAVE");
         save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,17 +185,8 @@ public class ModifyEvents extends javax.swing.JFrame {
             }
         });
 
-        deleteevent.setFont(new java.awt.Font("DejaVu Serif", 1, 48)); // NOI18N
-        deleteevent.setForeground(new java.awt.Color(39, 229, 217));
-        deleteevent.setText("DELETE EVENT");
-        deleteevent.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteeventActionPerformed(evt);
-            }
-        });
-
-        eventname2.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        eventname2.setForeground(new java.awt.Color(39, 229, 217));
+        eventname2.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        eventname2.setForeground(new java.awt.Color(254, 254, 254));
         eventname2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         eventname2.setText("Event Name");
 
@@ -144,8 +196,9 @@ public class ModifyEvents extends javax.swing.JFrame {
             }
         });
 
-        delete.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        delete.setForeground(new java.awt.Color(39, 229, 217));
+        delete.setBackground(new java.awt.Color(45, 99, 95));
+        delete.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        delete.setForeground(new java.awt.Color(254, 254, 254));
         delete.setText("DELETE");
         delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,8 +206,9 @@ public class ModifyEvents extends javax.swing.JFrame {
             }
         });
 
-        back.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        back.setForeground(new java.awt.Color(39, 229, 217));
+        back.setBackground(new java.awt.Color(45, 99, 95));
+        back.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        back.setForeground(new java.awt.Color(254, 254, 254));
         back.setText("BACK");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,17 +222,53 @@ public class ModifyEvents extends javax.swing.JFrame {
             }
         });
 
-        eventname1.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        eventname1.setForeground(new java.awt.Color(39, 229, 217));
+        eventname1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        eventname1.setForeground(new java.awt.Color(254, 254, 254));
         eventname1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         eventname1.setText("Event ID");
+
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel1.setText("MODIFY EVENT");
+
+        jLabel2.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel2.setText("DELETE EVENT");
+
+        back1.setBackground(new java.awt.Color(45, 99, 95));
+        back1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        back1.setForeground(new java.awt.Color(254, 254, 254));
+        back1.setText("REFRESH");
+        back1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(eventname2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(95, 95, 95)
+                                .addComponent(eventname2val, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(198, 198, 198)
+                                .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                                .addComponent(back1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(70, 70, 70)
+                                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,41 +286,24 @@ public class ModifyEvents extends javax.swing.JFrame {
                             .addComponent(eventname_val, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(eventid)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(modifyevent, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(66, 66, 66))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(deleteevent, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(eventname2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(95, 95, 95)
-                        .addComponent(eventname2val, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 313, Short.MAX_VALUE)
-                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(79, 79, 79))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(174, 174, 174)
-                .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(modifyevent)
-                .addGap(34, 34, 34)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(eventname_val, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(eventname, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(eventid, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(eventname1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -248,16 +321,17 @@ public class ModifyEvents extends javax.swing.JFrame {
                     .addComponent(endtime, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(save, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(deleteevent, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(33, 33, 33)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(eventname2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eventname2val))
+                    .addComponent(eventname2val, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(back1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -271,9 +345,18 @@ public class ModifyEvents extends javax.swing.JFrame {
         
           try {
              getConnectiondb();
+              String delahase = "Delete from AHASE where Event_ID = ?";
+             PreparedStatement pstdelahase = myConn.prepareStatement(delahase);
+   pstdelahase.setString(1, event_id);       
+             pstdelahase.execute();
+             
+             
              String sql = "Delete from Events where Event_ID = ?";
             PreparedStatement pst = myConn.prepareStatement(sql);
    pst.setString(1, event_id);
+   pst.execute();
+   refresh();
+   
          } catch (SQLException ex) {
              Logger.getLogger(ModifyAuditorium.class.getName()).log(Level.SEVERE, null, ex);
          } catch (ClassNotFoundException ex) {
@@ -283,10 +366,6 @@ public class ModifyEvents extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_deleteActionPerformed
-
-    private void deleteeventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteeventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_deleteeventActionPerformed
 
     private void eventname2valActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventname2valActionPerformed
         // TODO add your handling code here:
@@ -388,9 +467,36 @@ java.sql.Date sqlDateofevnt = new java.sql.Date(dateOfEvent.getTime());
           System.out.print("done");     
     }//GEN-LAST:event_saveActionPerformed
 
-    private void modifyeventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyeventActionPerformed
+    private void back1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_modifyeventActionPerformed
+          ModifyEvents me = new ModifyEvents();
+         me.setVisible(true);
+           this.setVisible(false);
+           
+           try {
+             getConnectiondb();
+             String sql = ("SELECT * FROM Events ");
+             Statement st = myConn.createStatement();
+ResultSet rs = st.executeQuery(sql);
+while(rs.next()) { 
+ 
+  String ename = rs.getString("Event_Name"); 
+
+
+ me.eventname_val.addItem(ename);
+ 
+ 
+}
+
+ } catch (SQLException ex) {
+             Logger.getLogger(ModifyEvents.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (ClassNotFoundException ex) {
+             Logger.getLogger(ModifyEvents.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         
+           
+        
+    }//GEN-LAST:event_back1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -433,10 +539,10 @@ java.sql.Date sqlDateofevnt = new java.sql.Date(dateOfEvent.getTime());
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
+    private javax.swing.JButton back1;
     private javax.swing.JLabel date;
     private com.toedter.calendar.JDateChooser dateval;
     private javax.swing.JButton delete;
-    private javax.swing.JRadioButton deleteevent;
     private javax.swing.JLabel endtime;
     private javax.swing.JTextField endtimeval;
     private javax.swing.JTextField eventid;
@@ -445,7 +551,8 @@ java.sql.Date sqlDateofevnt = new java.sql.Date(dateOfEvent.getTime());
     private javax.swing.JLabel eventname2;
     private javax.swing.JTextField eventname2val;
     public javax.swing.JComboBox<String> eventname_val;
-    private javax.swing.JRadioButton modifyevent;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton save;
     private javax.swing.JLabel starttime;
     private javax.swing.JTextField starttimeval;

@@ -174,7 +174,7 @@
           <Font name="DejaVu Serif" size="48" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Examination Details"/>
       </Properties>
@@ -185,7 +185,7 @@
           <Font name="DejaVu Serif Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Course ID"/>
@@ -197,7 +197,7 @@
           <Font name="DejaVu Serif Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Course Name"/>
@@ -209,7 +209,7 @@
           <Font name="DejaVu Serif Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Start Time"/>
@@ -221,28 +221,46 @@
           <Font name="DejaVu Serif Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Date"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="courseidval">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="courseidvalActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="coursenameval">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="stimeval">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="showexam">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5f" green="63" red="2d" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="DejaVu Serif Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="SHOW EXAM"/>
       </Properties>
@@ -252,11 +270,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="save">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5f" green="63" red="2d" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="DejaVu Serif Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="SAVE"/>
       </Properties>
@@ -266,11 +287,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="book">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5f" green="63" red="2d" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="DejaVu Serif Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="BOOK"/>
       </Properties>
@@ -282,11 +306,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="modclass">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5f" green="63" red="2d" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="DejaVu Serif Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Modify Classroom Details"/>
       </Properties>
@@ -296,11 +323,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="modstud">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5f" green="63" red="2d" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="DejaVu Serif Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Modify Student Details"/>
       </Properties>
@@ -314,18 +344,28 @@
           <Font name="DejaVu Serif Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="End Time"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="etimeval">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="etimevalActionPerformed"/>
       </Events>
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="dateval">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

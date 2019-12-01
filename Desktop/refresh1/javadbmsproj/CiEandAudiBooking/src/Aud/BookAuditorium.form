@@ -28,7 +28,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -36,7 +36,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="74" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -45,7 +45,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="5d" green="1b" red="14" type="rgb"/>
+          <Color blue="1" green="1" red="1" type="rgb"/>
         </Property>
       </Properties>
 
@@ -54,31 +54,30 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                  <Component id="addevent" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                  <Component id="addevent" min="-2" pref="42" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="bookauditorium" min="-2" pref="580" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="book" min="-2" pref="183" max="-2" attributes="0"/>
-                              <Component id="modifyauditorium" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="show1" pref="292" max="32767" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="modifyevents" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                                  <Component id="show" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <Component id="modifyauditorium" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                          <Component id="show1" pref="295" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="modifyevents" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="203" max="32767" attributes="0"/>
+                          <Component id="book" min="-2" pref="183" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                          <Component id="show" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="495" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
+                          <Component id="bookauditorium" min="-2" pref="580" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
@@ -147,12 +146,12 @@
                       <Component id="endtime" max="32767" attributes="0"/>
                       <Component id="endtimeval" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="79" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="book" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                       <Component id="show" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  <EmptySpace pref="64" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="addevent" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                       <Component id="modifyauditorium" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
@@ -171,7 +170,7 @@
               <Font name="DejaVu Serif" size="48" style="3"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="d9" green="e5" red="27" type="rgb"/>
+              <Color blue="fe" green="fe" red="fe" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="BOOK AUDITORIUM"/>
@@ -183,7 +182,7 @@
               <Font name="DejaVu Serif Condensed" size="24" style="3"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="d9" green="e5" red="27" type="rgb"/>
+              <Color blue="fe" green="fe" red="fe" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Event Name"/>
@@ -195,7 +194,7 @@
               <Font name="DejaVu Serif Condensed" size="24" style="3"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="d9" green="e5" red="27" type="rgb"/>
+              <Color blue="fe" green="fe" red="fe" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Date"/>
@@ -207,7 +206,7 @@
               <Font name="DejaVu Serif Condensed" size="24" style="3"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="d9" green="e5" red="27" type="rgb"/>
+              <Color blue="fe" green="fe" red="fe" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Start Time"/>
@@ -219,7 +218,7 @@
               <Font name="DejaVu Serif Condensed" size="24" style="3"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="d9" green="e5" red="27" type="rgb"/>
+              <Color blue="fe" green="fe" red="fe" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="End Time"/>
@@ -261,13 +260,13 @@
         <Component class="javax.swing.JButton" name="book">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="59" green="10" red="14" type="rgb"/>
+              <Color blue="5f" green="63" red="2d" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="DejaVu Serif Condensed" size="24" style="3"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="d9" green="e5" red="27" type="rgb"/>
+              <Color blue="fe" green="fe" red="fe" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="BOOK"/>
           </Properties>
@@ -278,13 +277,13 @@
         <Component class="javax.swing.JButton" name="addevent">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="59" green="10" red="14" type="rgb"/>
+              <Color blue="5f" green="63" red="2d" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="DejaVu Serif Condensed" size="24" style="3"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="d9" green="e5" red="27" type="rgb"/>
+              <Color blue="fe" green="fe" red="fe" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="ADD EVENT"/>
           </Properties>
@@ -295,13 +294,13 @@
         <Component class="javax.swing.JButton" name="show">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="59" green="10" red="14" type="rgb"/>
+              <Color blue="5f" green="63" red="2d" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="DejaVu Serif Condensed" size="24" style="3"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="d9" green="e5" red="27" type="rgb"/>
+              <Color blue="fe" green="fe" red="fe" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="SHOW EVENTS"/>
           </Properties>
@@ -312,13 +311,13 @@
         <Component class="javax.swing.JButton" name="modifyevents">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="59" green="10" red="14" type="rgb"/>
+              <Color blue="5f" green="63" red="2d" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="DejaVu Serif Condensed" size="24" style="3"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="d9" green="e5" red="27" type="rgb"/>
+              <Color blue="fe" green="fe" red="fe" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="MODIFY EVENTS"/>
           </Properties>
@@ -329,13 +328,13 @@
         <Component class="javax.swing.JButton" name="modifyauditorium">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="59" green="10" red="14" type="rgb"/>
+              <Color blue="5f" green="63" red="2d" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="DejaVu Serif Condensed" size="24" style="3"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="d9" green="e5" red="27" type="rgb"/>
+              <Color blue="fe" green="fe" red="fe" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="MODIFY AUDITORIUMS"/>
           </Properties>
@@ -349,7 +348,7 @@
               <Font name="DejaVu Serif Condensed" size="24" style="3"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="d9" green="e5" red="27" type="rgb"/>
+              <Color blue="fe" green="fe" red="fe" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Event_ID"/>
@@ -374,7 +373,7 @@
               <Font name="DejaVu Serif Condensed" size="24" style="3"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="d9" green="e5" red="27" type="rgb"/>
+              <Color blue="fe" green="fe" red="fe" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Max Seats Required"/>
@@ -393,13 +392,13 @@
         <Component class="javax.swing.JButton" name="show1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="59" green="10" red="14" type="rgb"/>
+              <Color blue="5f" green="63" red="2d" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="DejaVu Serif Condensed" size="24" style="3"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="d9" green="e5" red="27" type="rgb"/>
+              <Color blue="fe" green="fe" red="fe" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="SHOW AUDITORIUMS"/>
           </Properties>
@@ -408,6 +407,11 @@
           </Events>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="dateval">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="1" green="1" red="1" type="rgb"/>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

@@ -26,7 +26,7 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
      */
     public ModifyStudentDetails() {
         initComponents();
-         getContentPane().setBackground(new java.awt.Color(20, 16, 89));
+          getContentPane().setBackground(new java.awt.Color(1,1,1));
     }
     
      Connection myConn = null;
@@ -73,8 +73,6 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
         contactval = new javax.swing.JTextField();
         add = new javax.swing.JButton();
         modify = new javax.swing.JButton();
-        removename = new javax.swing.JRadioButton();
-        deregisterstudent = new javax.swing.JRadioButton();
         addstud = new javax.swing.JLabel();
         back = new javax.swing.JButton();
         modify1 = new javax.swing.JButton();
@@ -86,45 +84,46 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         modstud.setFont(new java.awt.Font("DejaVu Sans", 3, 48)); // NOI18N
-        modstud.setForeground(new java.awt.Color(39, 229, 217));
+        modstud.setForeground(new java.awt.Color(254, 254, 254));
         modstud.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         modstud.setText("MODIFY STUDENT DETAILS");
         modstud.setAlignmentX(2.0F);
         modstud.setAlignmentY(2.0F);
 
         usn.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        usn.setForeground(new java.awt.Color(39, 229, 217));
+        usn.setForeground(new java.awt.Color(254, 254, 254));
         usn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         usn.setText("USN");
         usn.setAlignmentX(2.0F);
         usn.setAlignmentY(2.0F);
 
         name.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        name.setForeground(new java.awt.Color(39, 229, 217));
+        name.setForeground(new java.awt.Color(254, 254, 254));
         name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         name.setText("NAME");
         name.setAlignmentX(2.0F);
         name.setAlignmentY(2.0F);
 
         class_.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        class_.setForeground(new java.awt.Color(39, 229, 217));
+        class_.setForeground(new java.awt.Color(254, 254, 254));
         class_.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         class_.setText("CLASS");
         class_.setAlignmentX(2.0F);
         class_.setAlignmentY(2.0F);
 
         year.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        year.setForeground(new java.awt.Color(39, 229, 217));
+        year.setForeground(new java.awt.Color(254, 254, 254));
         year.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         year.setText("YEAR");
         year.setAlignmentX(2.0F);
         year.setAlignmentY(2.0F);
 
         contact.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        contact.setForeground(new java.awt.Color(39, 229, 217));
+        contact.setForeground(new java.awt.Color(254, 254, 254));
         contact.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         contact.setText("CONTACT");
 
+        usnval.setForeground(new java.awt.Color(254, 254, 254));
         usnval.setAlignmentX(2.0F);
         usnval.setAlignmentY(2.0F);
         usnval.addActionListener(new java.awt.event.ActionListener() {
@@ -134,10 +133,12 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
         });
 
         nameval.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        nameval.setForeground(new java.awt.Color(254, 254, 254));
         nameval.setAlignmentX(2.0F);
         nameval.setAlignmentY(2.0F);
 
         classval.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        classval.setForeground(new java.awt.Color(254, 254, 254));
         classval.setAlignmentX(2.0F);
         classval.setAlignmentY(2.0F);
         classval.addActionListener(new java.awt.event.ActionListener() {
@@ -147,6 +148,7 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
         });
 
         yearval.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        yearval.setForeground(new java.awt.Color(254, 254, 254));
         yearval.setAlignmentX(2.0F);
         yearval.setAlignmentY(2.0F);
         yearval.addActionListener(new java.awt.event.ActionListener() {
@@ -155,14 +157,16 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
             }
         });
 
+        contactval.setForeground(new java.awt.Color(254, 254, 254));
         contactval.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contactvalActionPerformed(evt);
             }
         });
 
+        add.setBackground(new java.awt.Color(45, 99, 95));
         add.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        add.setForeground(new java.awt.Color(39, 229, 217));
+        add.setForeground(new java.awt.Color(254, 254, 254));
         add.setText("ADD");
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,8 +174,9 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
             }
         });
 
+        modify.setBackground(new java.awt.Color(45, 99, 95));
         modify.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        modify.setForeground(new java.awt.Color(39, 229, 217));
+        modify.setForeground(new java.awt.Color(254, 254, 254));
         modify.setText("MODIFY");
         modify.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,26 +184,8 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
             }
         });
 
-        removename.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        removename.setForeground(new java.awt.Color(39, 229, 217));
-        removename.setText("REMOVE  STUDENT");
-        removename.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removenameActionPerformed(evt);
-            }
-        });
-
-        deregisterstudent.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        deregisterstudent.setForeground(new java.awt.Color(39, 229, 217));
-        deregisterstudent.setText("DEREGISTER STUDENT");
-        deregisterstudent.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deregisterstudentActionPerformed(evt);
-            }
-        });
-
         addstud.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        addstud.setForeground(new java.awt.Color(39, 229, 217));
+        addstud.setForeground(new java.awt.Color(254, 254, 254));
         addstud.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         addstud.setText("ADD STUDENT");
         addstud.setAlignmentX(2.0F);
@@ -211,8 +198,9 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
             }
         });
 
+        modify1.setBackground(new java.awt.Color(45, 99, 95));
         modify1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        modify1.setForeground(new java.awt.Color(39, 229, 217));
+        modify1.setForeground(new java.awt.Color(254, 254, 254));
         modify1.setText("SHOW");
         modify1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,10 +209,11 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
         });
 
         contact1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        contact1.setForeground(new java.awt.Color(39, 229, 217));
+        contact1.setForeground(new java.awt.Color(254, 254, 254));
         contact1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         contact1.setText("COURSE_ID");
 
+        course_id_val.setForeground(new java.awt.Color(254, 254, 254));
         course_id_val.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 course_id_valActionPerformed(evt);
@@ -243,23 +232,11 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
                 .addComponent(modstud, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE)
                 .addGap(214, 214, 214))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(addstud, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(176, 176, 176)
-                        .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(122, 122, 122)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(modify)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(deregisterstudent, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(removename, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(210, 210, 210)
+                        .addComponent(modify)
                         .addGap(65, 65, 65)
                         .addComponent(modify1)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -281,6 +258,15 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
                                 .addComponent(contactval, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(course_id_val, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(addstud, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -314,8 +300,7 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addComponent(yearval, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(35, 35, 35)
-                        .addComponent(contactval, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(contactval, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -327,11 +312,7 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
                     .addComponent(add)
                     .addComponent(modify)
                     .addComponent(modify1))
-                .addGap(88, 88, 88)
-                .addComponent(deregisterstudent)
-                .addGap(39, 39, 39)
-                .addComponent(removename)
-                .addGap(134, 134, 134)
+                .addGap(327, 327, 327)
                 .addComponent(back)
                 .addGap(136, 136, 136))
         );
@@ -339,20 +320,9 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void removenameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removenameActionPerformed
-        if(removename.isSelected()) {
-            new RemoveStudent().setVisible(true);
-this.setVisible(false);}
-       // TODO add your handling code here:
-    }//GEN-LAST:event_removenameActionPerformed
-
     private void usnvalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usnvalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usnvalActionPerformed
-
-    private void deregisterstudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deregisterstudentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_deregisterstudentActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
        new examDetails().setVisible(true);
@@ -387,11 +357,11 @@ this.setVisible(false);}
         
         
         
-         String query = "insert into Student(USN, Name, Class,Year,Contact) " + 
-                                   "values (?,?,?,?,?)"; 
+         String query = "insert into Student(sn,USN, Name, Class,Year,Contact) " + 
+                                   "values (?,?,?,?,?,?)"; 
         
         int count = 0;
-       
+      
      for(int i = 0;i<60;i++)
      {
  count++;
@@ -399,12 +369,12 @@ this.setVisible(false);}
         getConnectiondb();
 
          preparedStatement = myConn.prepareStatement(query);
-
-         preparedStatement.setString(1,susn+count);
-         preparedStatement.setString(2,sname+count);
-          preparedStatement.setString(3,sclass);
-         preparedStatement.setInt(4,syear);
-          preparedStatement.setString(5,scontact);
+          preparedStatement.setInt(1,i+1);
+         preparedStatement.setString(2,susn+count);
+         preparedStatement.setString(3,sname+count);
+          preparedStatement.setString(4,sclass);
+         preparedStatement.setInt(5,syear);
+          preparedStatement.setString(6,scontact);
          
          
 
@@ -433,7 +403,7 @@ this.setVisible(false);}
     }
     
     
-    void addStudentmain()
+    void addStudentmain() throws SQLException
     {
          String susn,sname,sclass,scontact;
         int syear;
@@ -443,10 +413,33 @@ this.setVisible(false);}
         syear = Integer.parseInt(yearval.getText());
         scontact = contactval.getText();
         
-        
-        
-         String query = "insert into Student(USN, Name, Class,Year,Contact) " + 
-                                   "values (?,?,?,?,?)"; 
+        //select sn
+         String selectsn =     ( "SELECT max(sn) as sn from Student");
+         
+ int sid = 0;
+ 
+               Statement stgetcourse = null;
+        try {
+            stgetcourse = myConn.createStatement();
+        } catch (SQLException ex) {
+            Logger.getLogger(ModifyStudentDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+               ResultSet rtgetcourse = null;
+        try {
+            rtgetcourse = stgetcourse.executeQuery(selectsn);
+        } catch (SQLException ex) {
+            Logger.getLogger(ModifyStudentDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+               if(rtgetcourse.next())
+               {
+                   sid = rtgetcourse.getInt("sn");
+                  
+               }
+               
+              int sn = sid+1; 
+               
+         String query = "insert into Student(sn,USN, Name, Class,Year,Contact) " + 
+                                   "values (?,?,?,?,?,?)"; 
         
       
  
@@ -454,12 +447,12 @@ this.setVisible(false);}
         getConnectiondb();
 
          preparedStatement = myConn.prepareStatement(query);
-
-         preparedStatement.setString(1,susn);
-         preparedStatement.setString(2,sname);
-          preparedStatement.setString(3,sclass);
-         preparedStatement.setInt(4,syear);
-          preparedStatement.setString(5,scontact);
+preparedStatement.setInt(1,sid);
+         preparedStatement.setString(2,susn);
+         preparedStatement.setString(3,sname);
+          preparedStatement.setString(4,sclass);
+         preparedStatement.setInt(5,syear);
+          preparedStatement.setString(6,scontact);
          
          
 
@@ -495,9 +488,10 @@ this.setVisible(false);}
         
         
         
-         String query = "insert into Registered(USN, CID) " + 
-                                   "values (?,?)"; 
+         String query = "insert into Registered(sn,USN, CID) " + 
+                                   "values (?,?,?)"; 
         
+         
         int count = 0;
        
      for(int i = 0;i<60;i++)
@@ -507,9 +501,9 @@ this.setVisible(false);}
         getConnectiondb();
 
          preparedStatement = myConn.prepareStatement(query);
-
-         preparedStatement.setString(1,susn+count);
-         preparedStatement.setString(2,course_id);
+         preparedStatement.setInt(1,i+1);
+         preparedStatement.setString(2,susn+count);
+         preparedStatement.setString(3,course_id);
          
          
          
@@ -547,18 +541,57 @@ this.setVisible(false);}
         
         
         
-         String query = "insert into Registered(USN, CID) " + 
+         String query = "insert into Registered(sn,USN, CID) " + 
                                    "values (?,?)"; 
         
        
+         
+         //sn
+          //select sn
+         String selectsn =     ( "SELECT max(sn) as sn from Registered");
+         
+ int sid = 0;
+ 
+               Statement stgetcourse = null;
+        try {
+            stgetcourse = myConn.createStatement();
+        } catch (SQLException ex) {
+            Logger.getLogger(ModifyStudentDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+               ResultSet rtgetcourse = null;
+        try {
+            rtgetcourse = stgetcourse.executeQuery(selectsn);
+        } catch (SQLException ex) {
+            Logger.getLogger(ModifyStudentDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            if(rtgetcourse.next())
+            {
+                sid = rtgetcourse.getInt("sn");
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ModifyStudentDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+               
+              int sn = sid+1; 
+         
+         
+         
+         
+         
+         
+         
     
       try {
         getConnectiondb();
 
          preparedStatement = myConn.prepareStatement(query);
 
-         preparedStatement.setString(1,susn);
-         preparedStatement.setString(2,course_id);
+         
+         preparedStatement.setInt(1,sn);
+         preparedStatement.setString(2,susn);
+         preparedStatement.setString(3,course_id);
          
          
          
@@ -591,8 +624,8 @@ this.setVisible(false);}
     
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         // TODO add your handling code here:
-     addStudentmain();
-     addcourseMain();
+    // addStudent();
+     addcourse();
        
         
     }//GEN-LAST:event_addActionPerformed
@@ -654,7 +687,6 @@ this.setVisible(false);}
     private javax.swing.JLabel contact1;
     private javax.swing.JTextField contactval;
     private javax.swing.JTextField course_id_val;
-    private javax.swing.JRadioButton deregisterstudent;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JButton modify;
@@ -662,7 +694,6 @@ this.setVisible(false);}
     private javax.swing.JLabel modstud;
     private javax.swing.JLabel name;
     private javax.swing.JTextField nameval;
-    private javax.swing.JRadioButton removename;
     private javax.swing.JLabel usn;
     private javax.swing.JTextField usnval;
     private javax.swing.JLabel year;

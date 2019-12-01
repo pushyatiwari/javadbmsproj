@@ -45,30 +45,12 @@
               <Component id="modstud" pref="753" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="214" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="addstud" min="-2" pref="245" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
-                      <Component id="add" min="-2" pref="91" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="modify" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="deregisterstudent" min="-2" pref="319" max="-2" attributes="0"/>
-                              <Component id="removename" min="-2" pref="289" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
+                      <Component id="modify" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       <Component id="modify1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -96,6 +78,19 @@
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="addstud" min="-2" pref="245" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
+                      <Component id="add" min="-2" pref="91" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -138,7 +133,6 @@
                       <Component id="yearval" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="contactval" min="-2" pref="38" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -155,11 +149,7 @@
                   <Component id="modify" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="modify1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-              <Component id="deregisterstudent" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-              <Component id="removename" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="327" max="-2" attributes="0"/>
               <Component id="back" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
           </Group>
@@ -173,7 +163,7 @@
           <Font name="DejaVu Sans" size="48" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="MODIFY STUDENT DETAILS"/>
@@ -187,7 +177,7 @@
           <Font name="DejaVu Sans Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="USN"/>
@@ -201,7 +191,7 @@
           <Font name="DejaVu Sans Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="NAME"/>
@@ -215,7 +205,7 @@
           <Font name="DejaVu Sans Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="CLASS"/>
@@ -229,7 +219,7 @@
           <Font name="DejaVu Sans Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="YEAR"/>
@@ -243,7 +233,7 @@
           <Font name="DejaVu Sans Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="CONTACT"/>
@@ -251,6 +241,9 @@
     </Component>
     <Component class="javax.swing.JTextField" name="usnval">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
+        </Property>
         <Property name="alignmentX" type="float" value="2.0"/>
         <Property name="alignmentY" type="float" value="2.0"/>
       </Properties>
@@ -263,6 +256,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Ubuntu" size="18" style="1"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
+        </Property>
         <Property name="alignmentX" type="float" value="2.0"/>
         <Property name="alignmentY" type="float" value="2.0"/>
       </Properties>
@@ -271,6 +267,9 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Ubuntu" size="18" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="alignmentX" type="float" value="2.0"/>
         <Property name="alignmentY" type="float" value="2.0"/>
@@ -284,6 +283,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Ubuntu" size="18" style="1"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
+        </Property>
         <Property name="alignmentX" type="float" value="2.0"/>
         <Property name="alignmentY" type="float" value="2.0"/>
       </Properties>
@@ -292,17 +294,25 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="contactval">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contactvalActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="add">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5f" green="63" red="2d" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="DejaVu Sans Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="ADD"/>
       </Properties>
@@ -312,44 +322,19 @@
     </Component>
     <Component class="javax.swing.JButton" name="modify">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5f" green="63" red="2d" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="DejaVu Sans Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="MODIFY"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modifyActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="removename">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="DejaVu Sans Condensed" size="24" style="3"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="REMOVE  STUDENT"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removenameActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="deregisterstudent">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="DejaVu Sans Condensed" size="24" style="3"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="DEREGISTER STUDENT"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deregisterstudentActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="addstud">
@@ -358,7 +343,7 @@
           <Font name="DejaVu Sans Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="ADD STUDENT"/>
@@ -376,11 +361,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="modify1">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5f" green="63" red="2d" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="DejaVu Sans Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="SHOW"/>
       </Properties>
@@ -394,13 +382,18 @@
           <Font name="DejaVu Sans Condensed" size="24" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d9" green="e5" red="27" type="rgb"/>
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="COURSE_ID"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="course_id_val">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fe" green="fe" red="fe" type="rgb"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="course_id_valActionPerformed"/>
       </Events>
