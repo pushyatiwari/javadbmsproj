@@ -109,9 +109,9 @@ public class ModifyAuditorium extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("NUMBER OF SEATS");
 
-        auditoriumnumberval.setBackground(new java.awt.Color(254, 254, 254));
+        auditoriumnumberval.setBackground(new java.awt.Color(1, 1, 1));
         auditoriumnumberval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        auditoriumnumberval.setForeground(new java.awt.Color(1, 1, 1));
+        auditoriumnumberval.setForeground(new java.awt.Color(254, 254, 254));
 
         save.setBackground(new java.awt.Color(45, 99, 95));
         save.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
@@ -128,8 +128,9 @@ public class ModifyAuditorium extends javax.swing.JFrame {
         auditoriumnumber2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         auditoriumnumber2.setText("AUDITORIUM NUMBER");
 
+        auditoriumnumber2val.setBackground(new java.awt.Color(1, 1, 1));
         auditoriumnumber2val.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        auditoriumnumber2val.setForeground(new java.awt.Color(1, 1, 1));
+        auditoriumnumber2val.setForeground(new java.awt.Color(254, 254, 254));
 
         delete.setBackground(new java.awt.Color(45, 99, 95));
         delete.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
@@ -156,9 +157,9 @@ public class ModifyAuditorium extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("STATUS");
 
-        aud_statusval.setBackground(new java.awt.Color(254, 254, 254));
+        aud_statusval.setBackground(new java.awt.Color(1, 1, 1));
         aud_statusval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        aud_statusval.setForeground(new java.awt.Color(1, 1, 1));
+        aud_statusval.setForeground(new java.awt.Color(254, 254, 254));
         aud_statusval.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aud_statusvalActionPerformed(evt);
@@ -170,14 +171,14 @@ public class ModifyAuditorium extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("COUNT");
 
-        aud_countval.setBackground(new java.awt.Color(254, 254, 254));
+        aud_countval.setBackground(new java.awt.Color(1, 1, 1));
         aud_countval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        aud_countval.setForeground(new java.awt.Color(1, 1, 1));
+        aud_countval.setForeground(new java.awt.Color(254, 254, 254));
 
-        audno_val.setBackground(new java.awt.Color(254, 254, 254));
+        audno_val.setBackground(new java.awt.Color(1, 1, 1));
         audno_val.setEditable(true);
         audno_val.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        audno_val.setForeground(new java.awt.Color(1, 1, 1));
+        audno_val.setForeground(new java.awt.Color(254, 254, 254));
         audno_val.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 audno_valActionPerformed(evt);

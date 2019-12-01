@@ -70,9 +70,11 @@ public class booking_exam extends javax.swing.JFrame {
         booking_time_val = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        booking_date_val.setBackground(new java.awt.Color(1, 1, 1));
         booking_date_val.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         booking_date_val.setForeground(new java.awt.Color(254, 254, 254));
         booking_date_val.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +95,7 @@ public class booking_exam extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(254, 254, 254));
         jLabel3.setText("BOOK FOR TIME");
 
+        booking_time_val.setBackground(new java.awt.Color(1, 1, 1));
         booking_time_val.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         booking_time_val.setForeground(new java.awt.Color(254, 254, 254));
 
@@ -116,6 +119,16 @@ public class booking_exam extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(45, 99, 95));
+        jButton3.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 250, 250));
+        jButton3.setText("BACK");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -136,11 +149,15 @@ public class booking_exam extends javax.swing.JFrame {
                         .addGap(136, 136, 136)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE))
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(195, 195, 195))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +176,9 @@ public class booking_exam extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(189, 189, 189))
+                .addGap(139, 139, 139)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -484,6 +503,12 @@ ResultSet rsusncount = st2.executeQuery(usncount);
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        new ShowExam().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -524,6 +549,7 @@ ResultSet rsusncount = st2.executeQuery(usncount);
     public javax.swing.JComboBox<String> booking_time_val;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

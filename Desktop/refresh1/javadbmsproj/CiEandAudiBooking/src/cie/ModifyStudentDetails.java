@@ -123,6 +123,8 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
         contact.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         contact.setText("CONTACT");
 
+        usnval.setBackground(new java.awt.Color(1, 1, 1));
+        usnval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         usnval.setForeground(new java.awt.Color(254, 254, 254));
         usnval.setAlignmentX(2.0F);
         usnval.setAlignmentY(2.0F);
@@ -132,12 +134,14 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
             }
         });
 
-        nameval.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        nameval.setBackground(new java.awt.Color(1, 1, 1));
+        nameval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         nameval.setForeground(new java.awt.Color(254, 254, 254));
         nameval.setAlignmentX(2.0F);
         nameval.setAlignmentY(2.0F);
 
-        classval.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        classval.setBackground(new java.awt.Color(1, 1, 1));
+        classval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         classval.setForeground(new java.awt.Color(254, 254, 254));
         classval.setAlignmentX(2.0F);
         classval.setAlignmentY(2.0F);
@@ -147,7 +151,8 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
             }
         });
 
-        yearval.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        yearval.setBackground(new java.awt.Color(1, 1, 1));
+        yearval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         yearval.setForeground(new java.awt.Color(254, 254, 254));
         yearval.setAlignmentX(2.0F);
         yearval.setAlignmentY(2.0F);
@@ -157,6 +162,8 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
             }
         });
 
+        contactval.setBackground(new java.awt.Color(1, 1, 1));
+        contactval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         contactval.setForeground(new java.awt.Color(254, 254, 254));
         contactval.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,6 +198,9 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
         addstud.setAlignmentX(2.0F);
         addstud.setAlignmentY(2.0F);
 
+        back.setBackground(new java.awt.Color(45, 99, 95));
+        back.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        back.setForeground(new java.awt.Color(254, 254, 254));
         back.setText("BACK");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,6 +223,8 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
         contact1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         contact1.setText("COURSE_ID");
 
+        course_id_val.setBackground(new java.awt.Color(1, 1, 1));
+        course_id_val.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         course_id_val.setForeground(new java.awt.Color(254, 254, 254));
         course_id_val.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,13 +236,6 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(back))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addComponent(modstud, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE)
-                .addGap(214, 214, 214))
             .addGroup(layout.createSequentialGroup()
                 .addGap(122, 122, 122)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,23 +246,26 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
                         .addComponent(modify1)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(contact, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-                            .addComponent(year, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(class_, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(usn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(contact1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(103, 103, 103)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(nameval)
-                                .addComponent(usnval)
-                                .addComponent(classval)
-                                .addComponent(yearval)
-                                .addComponent(contactval, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(course_id_val, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(contact, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                                    .addComponent(year, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(class_, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(usn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(contact1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(103, 103, 103)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(nameval)
+                                        .addComponent(usnval)
+                                        .addComponent(classval)
+                                        .addComponent(yearval)
+                                        .addComponent(contactval, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(course_id_val, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(174, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -267,6 +275,9 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
                         .addGap(176, 176, 176)
                         .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(modstud, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,9 +301,9 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(class_, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                        .addComponent(class_, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(31, 31, 31)
-                        .addComponent(year, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                        .addComponent(year, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(43, 43, 43)
                         .addComponent(contact, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -312,9 +323,9 @@ public class ModifyStudentDetails extends javax.swing.JFrame {
                     .addComponent(add)
                     .addComponent(modify)
                     .addComponent(modify1))
-                .addGap(327, 327, 327)
+                .addGap(30, 30, 30)
                 .addComponent(back)
-                .addGap(136, 136, 136))
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -623,15 +634,60 @@ preparedStatement.setInt(1,sid);
     
     
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        // TODO add your handling code here:
-    // addStudent();
-     addcourse();
+//        try {
+            // TODO add your handling code here:
+           // addStudentmain();
+          // addStudent();
+           addcourse();
+//        } catch (SQLException ex) {
+//            Logger.getLogger(ModifyStudentDetails.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    addcourseMain();
        
         
     }//GEN-LAST:event_addActionPerformed
 
     private void modify1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modify1ActionPerformed
         // TODO add your handling code here:
+        students stnd = new students();
+        stnd.setVisible(true);
+        this.setVisible(false);
+        
+        try {
+            //get count
+            getConnectiondb();
+        } catch (SQLException ex) {
+            Logger.getLogger(ModifyStudentDetails.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ModifyStudentDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+             String selectst =  ("select * from Student");
+             //selecting courseid 
+           
+             
+             
+
+        try {
+            Statement st = myConn.createStatement();
+            ResultSet rsst = st.executeQuery(selectst);
+             while(rsst.next()){
+        String getusn= rsst.getString("USN");
+         String getname = rsst.getString("Name");
+          String getclass = rsst.getString("Class");
+          int year = rsst.getInt("Year");
+          stnd.textarea.append("USN: "+getusn+" Name :"+getname+" Class: "+getclass+" Year: "+year+"\n");
+          
+          
+        
+        }
+        } catch (SQLException ex) {
+            Logger.getLogger(ModifyStudentDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        
+        
+        
+        
         
           
         

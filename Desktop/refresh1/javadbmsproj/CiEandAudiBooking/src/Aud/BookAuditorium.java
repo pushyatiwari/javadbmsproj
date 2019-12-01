@@ -151,7 +151,6 @@ ResultSet rs = st.executeQuery(sql);
         starttimeval = new javax.swing.JTextField();
         endtimeval = new javax.swing.JTextField();
         book = new javax.swing.JButton();
-        addevent = new javax.swing.JButton();
         show = new javax.swing.JButton();
         modifyevents = new javax.swing.JButton();
         modifyauditorium = new javax.swing.JButton();
@@ -161,6 +160,7 @@ ResultSet rs = st.executeQuery(sql);
         maxseatsval = new javax.swing.JTextField();
         show1 = new javax.swing.JButton();
         dateval = new com.toedter.calendar.JDateChooser();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(253, 145, 145));
@@ -192,19 +192,22 @@ ResultSet rs = st.executeQuery(sql);
         endtime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         endtime.setText("End Time");
 
-        eventnameval.setFont(new java.awt.Font("Courier 10 Pitch", 1, 24)); // NOI18N
-        eventnameval.setForeground(new java.awt.Color(1, 1, 1));
+        eventnameval.setBackground(new java.awt.Color(1, 1, 1));
+        eventnameval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        eventnameval.setForeground(new java.awt.Color(254, 254, 254));
 
-        starttimeval.setFont(new java.awt.Font("Courier 10 Pitch", 1, 24)); // NOI18N
-        starttimeval.setForeground(new java.awt.Color(1, 1, 1));
+        starttimeval.setBackground(new java.awt.Color(1, 1, 1));
+        starttimeval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        starttimeval.setForeground(new java.awt.Color(254, 254, 254));
         starttimeval.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 starttimevalActionPerformed(evt);
             }
         });
 
-        endtimeval.setFont(new java.awt.Font("Courier 10 Pitch", 1, 24)); // NOI18N
-        endtimeval.setForeground(new java.awt.Color(1, 1, 1));
+        endtimeval.setBackground(new java.awt.Color(1, 1, 1));
+        endtimeval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        endtimeval.setForeground(new java.awt.Color(254, 254, 254));
 
         book.setBackground(new java.awt.Color(45, 99, 95));
         book.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
@@ -213,16 +216,6 @@ ResultSet rs = st.executeQuery(sql);
         book.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bookActionPerformed(evt);
-            }
-        });
-
-        addevent.setBackground(new java.awt.Color(45, 99, 95));
-        addevent.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
-        addevent.setForeground(new java.awt.Color(254, 254, 254));
-        addevent.setText("ADD EVENT");
-        addevent.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addeventActionPerformed(evt);
             }
         });
 
@@ -261,8 +254,9 @@ ResultSet rs = st.executeQuery(sql);
         eventname1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         eventname1.setText("Event_ID");
 
-        eventidval.setFont(new java.awt.Font("Courier 10 Pitch", 1, 24)); // NOI18N
-        eventidval.setForeground(new java.awt.Color(1, 1, 1));
+        eventidval.setBackground(new java.awt.Color(1, 1, 1));
+        eventidval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        eventidval.setForeground(new java.awt.Color(254, 254, 254));
         eventidval.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eventidvalActionPerformed(evt);
@@ -274,8 +268,9 @@ ResultSet rs = st.executeQuery(sql);
         eventname2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         eventname2.setText("Max Seats Required");
 
-        maxseatsval.setFont(new java.awt.Font("Courier 10 Pitch", 1, 24)); // NOI18N
-        maxseatsval.setForeground(new java.awt.Color(1, 1, 1));
+        maxseatsval.setBackground(new java.awt.Color(1, 1, 1));
+        maxseatsval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        maxseatsval.setForeground(new java.awt.Color(254, 254, 254));
 
         show1.setBackground(new java.awt.Color(45, 99, 95));
         show1.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 24)); // NOI18N
@@ -287,54 +282,67 @@ ResultSet rs = st.executeQuery(sql);
             }
         });
 
-        dateval.setForeground(new java.awt.Color(1, 1, 1));
+        dateval.setBackground(new java.awt.Color(1, 1, 1));
+        dateval.setForeground(new java.awt.Color(254, 254, 254));
+
+        jButton1.setBackground(new java.awt.Color(45, 99, 95));
+        jButton1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(254, 254, 254));
+        jButton1.setText("BACK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(addevent, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(271, 271, 271)
+                .addComponent(bookauditorium, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(book, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
+                .addComponent(show)
+                .addGap(495, 495, 495))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(modifyauditorium)
-                        .addGap(39, 39, 39)
-                        .addComponent(show1, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
-                        .addGap(47, 47, 47)
-                        .addComponent(modifyevents)
-                        .addGap(206, 206, 206))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 203, Short.MAX_VALUE)
-                        .addComponent(book, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(69, 69, 69)
-                        .addComponent(show)
-                        .addGap(495, 495, 495))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(bookauditorium, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(97, 97, 97))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(273, 273, 273)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(eventname2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(eventname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(eventname1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(starttime, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(endtime, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(87, 87, 87)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(eventidval, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(eventnameval, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(maxseatsval, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(starttimeval, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(endtimeval, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(dateval, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(138, 138, 138)
+                                .addComponent(modifyauditorium)
+                                .addGap(51, 51, 51)
+                                .addComponent(show1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(273, 273, 273)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(eventname2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(eventname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(eventname1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(starttime, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(endtime, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(87, 87, 87)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(eventidval, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(eventnameval, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(maxseatsval, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(starttimeval, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(endtimeval, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(dateval, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                        .addComponent(modifyevents)))
+                .addGap(106, 106, 106))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -372,13 +380,13 @@ ResultSet rs = st.executeQuery(sql);
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(book, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(show))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addevent, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modifyauditorium, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(modifyevents, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(show1))
-                .addGap(37, 37, 37))
+                    .addComponent(show1)
+                    .addComponent(modifyevents, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -387,7 +395,7 @@ ResultSet rs = st.executeQuery(sql);
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 3, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -542,38 +550,6 @@ java.sql.Date sqlDateofevnt = new java.sql.Date(dateOfEvent.getTime());
                              }   
     }
     
-    private void addeventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addeventActionPerformed
-        // TODO add your handling code here:
-       
-           sTime = starttimeval.getText();
-       // eTime = endtimeval.getText();
-         Date date1 = null;
-         Date date2 = null;
-          SimpleDateFormat formatter = null;
-           Time time1 = null;
-        try{
-         try {
-            //for stime and etime formatting
-    SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
-     date1 = null;
-         date1 = sdf.parse(sTime);   
-         time1 = new Time(date1.getTime());
-    System.out.println(formatter.format(date1));  
-        // date2 = sdf.parse(eTime);
-     } catch (ParseException ex) {
-        Logger.getLogger(BookAuditorium.class.getName()).log(Level.SEVERE, null, ex);
-    }
-        }
-        catch(Exception e)
-        {
-            
-        }
-   System.out.println("time is : " +(sTime));
-       System.out.println("Aud.BookAuditorium.addeventActionPerformed()"+time1);
-            
-        
-    }//GEN-LAST:event_addeventActionPerformed
-
     private void bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookActionPerformed
         // TODO add your handling code here:
          ResultSet Audit = null ;
@@ -840,6 +816,13 @@ while(rs.next()) {
         // TODO add your handling code here:
     }//GEN-LAST:event_eventidvalActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new loginaud().setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -880,7 +863,6 @@ while(rs.next()) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addevent;
     private javax.swing.JButton book;
     private javax.swing.JLabel bookauditorium;
     private com.toedter.calendar.JDateChooser dateval;
@@ -891,6 +873,7 @@ while(rs.next()) {
     private javax.swing.JLabel eventname1;
     private javax.swing.JLabel eventname2;
     private javax.swing.JTextField eventnameval;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField maxseatsval;

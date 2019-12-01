@@ -175,6 +175,14 @@ ResultSet rs = st.executeQuery(sql);
         endtime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         endtime.setText("End Time");
 
+        starttimeval.setBackground(new java.awt.Color(1, 1, 1));
+        starttimeval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 18)); // NOI18N
+        starttimeval.setForeground(new java.awt.Color(254, 254, 254));
+
+        endtimeval.setBackground(new java.awt.Color(1, 1, 1));
+        endtimeval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 18)); // NOI18N
+        endtimeval.setForeground(new java.awt.Color(254, 254, 254));
+
         save.setBackground(new java.awt.Color(45, 99, 95));
         save.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         save.setForeground(new java.awt.Color(254, 254, 254));
@@ -190,6 +198,8 @@ ResultSet rs = st.executeQuery(sql);
         eventname2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         eventname2.setText("Event Name");
 
+        eventname2val.setBackground(new java.awt.Color(1, 1, 1));
+        eventname2val.setForeground(new java.awt.Color(254, 254, 254));
         eventname2val.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eventname2valActionPerformed(evt);
@@ -216,11 +226,21 @@ ResultSet rs = st.executeQuery(sql);
             }
         });
 
+        eventname_val.setBackground(new java.awt.Color(1, 1, 1));
+        eventname_val.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 18)); // NOI18N
+        eventname_val.setForeground(new java.awt.Color(254, 254, 254));
         eventname_val.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eventname_valActionPerformed(evt);
             }
         });
+
+        dateval.setBackground(new java.awt.Color(1, 1, 1));
+        dateval.setForeground(new java.awt.Color(254, 254, 254));
+
+        eventid.setBackground(new java.awt.Color(1, 1, 1));
+        eventid.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 18)); // NOI18N
+        eventid.setForeground(new java.awt.Color(254, 254, 254));
 
         eventname1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         eventname1.setForeground(new java.awt.Color(254, 254, 254));
@@ -326,7 +346,7 @@ ResultSet rs = st.executeQuery(sql);
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(eventname2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eventname2val, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+                    .addComponent(eventname2val, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)

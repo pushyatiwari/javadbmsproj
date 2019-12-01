@@ -72,7 +72,8 @@ public class ModifyClassroom extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        roomnumberval.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        roomnumberval.setBackground(new java.awt.Color(1, 1, 1));
+        roomnumberval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         roomnumberval.setForeground(new java.awt.Color(254, 254, 254));
         roomnumberval.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,29 +81,31 @@ public class ModifyClassroom extends javax.swing.JFrame {
             }
         });
 
-        totalseatsval.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        totalseatsval.setBackground(new java.awt.Color(1, 1, 1));
+        totalseatsval.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         totalseatsval.setForeground(new java.awt.Color(254, 254, 254));
 
-        roomnumber.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        roomnumber.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         roomnumber.setForeground(new java.awt.Color(254, 254, 254));
         roomnumber.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         roomnumber.setText("Room Number");
 
-        totalseats.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        totalseats.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         totalseats.setForeground(new java.awt.Color(254, 254, 254));
         totalseats.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         totalseats.setText("Total Seats");
 
-        roomnumber2.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        roomnumber2.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         roomnumber2.setForeground(new java.awt.Color(254, 254, 254));
         roomnumber2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         roomnumber2.setText("Room Number");
 
-        roomnumber2val.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        roomnumber2val.setBackground(new java.awt.Color(1, 1, 1));
+        roomnumber2val.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         roomnumber2val.setForeground(new java.awt.Color(254, 254, 254));
 
         save.setBackground(new java.awt.Color(45, 99, 95));
-        save.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        save.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         save.setForeground(new java.awt.Color(254, 254, 254));
         save.setText("Remove");
         save.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +115,7 @@ public class ModifyClassroom extends javax.swing.JFrame {
         });
 
         showclassroom.setBackground(new java.awt.Color(45, 99, 95));
-        showclassroom.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        showclassroom.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         showclassroom.setForeground(new java.awt.Color(254, 254, 254));
         showclassroom.setText("Show classroom");
         showclassroom.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +143,7 @@ public class ModifyClassroom extends javax.swing.JFrame {
         jLabel2.setText("Remove CLASSROOM");
 
         save2.setBackground(new java.awt.Color(45, 99, 95));
-        save2.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 24)); // NOI18N
+        save2.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         save2.setForeground(new java.awt.Color(254, 254, 254));
         save2.setText("Back");
         save2.addActionListener(new java.awt.event.ActionListener() {
@@ -155,9 +158,6 @@ public class ModifyClassroom extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(262, 262, 262)
-                        .addComponent(roomnumber2val, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -178,14 +178,17 @@ public class ModifyClassroom extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGap(37, 37, 37)
                                 .addComponent(roomnumber2, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(104, 104, 104)
-                        .addComponent(showclassroom)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(56, 56, 56)
+                        .addComponent(showclassroom, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(262, 262, 262)
+                        .addComponent(roomnumber2val, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(save1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20))
-                    .addComponent(save2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(save2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,7 +229,61 @@ public class ModifyClassroom extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void showclassroomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showclassroomActionPerformed
-        // TODO add your handling code here:
+       classroom cls = new classroom();
+       cls.setVisible(true);
+       this.setVisible(false);
+        try {
+            // TODO add your handling code here:
+            getConnectiondb();
+            //---------
+            
+            
+        
+        try {
+            //get count
+            getConnectiondb();
+        } catch (SQLException ex) {
+            Logger.getLogger(ModifyStudentDetails.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ModifyStudentDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+             String selectst =  ("select * from Classroom_status");
+             //selecting courseid 
+           
+             
+             
+
+        try {
+            Statement st = myConn.createStatement();
+            ResultSet rsst = st.executeQuery(selectst);
+             while(rsst.next()){
+        String roomno= rsst.getString("room_no");
+         String totalseat = rsst.getString("TotalSeat");
+          String status = rsst.getString("Status");
+         
+          cls.textarea.append("Roomno: "+roomno+" Total Seat :"+totalseat+" status: "+status+"\n");
+          
+          
+        
+        }
+        } catch (SQLException ex) {
+            Logger.getLogger(ModifyStudentDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        
+        
+        
+            
+            //----------
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ModifyClassroom.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ModifyClassroom.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
     }//GEN-LAST:event_showclassroomActionPerformed
 
     private void roomnumbervalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roomnumbervalActionPerformed

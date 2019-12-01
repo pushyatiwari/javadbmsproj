@@ -5,6 +5,16 @@
  */
 package cie;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 
 /**
@@ -22,6 +32,25 @@ public class Arrangement extends javax.swing.JFrame {
       
     }
 
+     Connection myConn = null;
+        Statement myStmt = null;
+        ResultSet myRs = null;
+        PreparedStatement preparedStatement;
+    /**
+     * Creates new form BookAuditorium
+     */
+   void getConnectiondb() throws SQLException, ClassNotFoundException{
+        // TODO code application logic here
+       
+      String user = "root";
+      String pass = "test";
+
+      myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cie_book", user, pass);
+       
+
+       
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,9 +62,11 @@ public class Arrangement extends javax.swing.JFrame {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         textarea_val = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        textarea_val.setEditable(false);
         textarea_val.setBackground(new java.awt.Color(1, 1, 1));
         textarea_val.setColumns(20);
         textarea_val.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 14)); // NOI18N
@@ -43,19 +74,65 @@ public class Arrangement extends javax.swing.JFrame {
         textarea_val.setRows(5);
         jScrollPane2.setViewportView(textarea_val);
 
+        jButton1.setBackground(new java.awt.Color(45, 99, 95));
+        jButton1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(254, 254, 254));
+        jButton1.setText("BACK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 804, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 533, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+     booking_exam be =   new booking_exam();
+     be.setVisible(true);
+        this.setVisible(false);
+          try {
+             getConnectiondb();
+             String sql = ("SELECT * FROM Exam");
+             Statement st = myConn.createStatement();
+ResultSet rs = st.executeQuery(sql);
+while(rs.next()) { 
+ 
+      Date a_name = rs.getDate("Date"); 
+
+     be.booking_date_val.addItem(a_name.toString());
+
+ 
+ 
+}
+
+ }      catch (SQLException ex) { 
+            Logger.getLogger(ShowExam.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ShowExam.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,6 +170,7 @@ public class Arrangement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTextArea textarea_val;
     // End of variables declaration//GEN-END:variables

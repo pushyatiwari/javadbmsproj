@@ -1,5 +1,11 @@
-package cie;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Aud;
 
+import cie.homePage;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -9,27 +15,20 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
- * @author LENOVO
+ * @author pushya
  */
-public class login extends javax.swing.JFrame {
+public class loginaud extends javax.swing.JFrame {
 
     /**
-     * Creates new form login
+     * Creates new form loginaud
      */
-    public login() {
+    public loginaud() {
         initComponents();
-          getContentPane().setBackground(new java.awt.Color(1,1,1));
+        getContentPane().setBackground(new java.awt.Color(1,1,1));
     }
-    
-    
-        Connection myConn = null;
+ Connection myConn = null;
         Statement myStmt = null;
         ResultSet myRs = null;
         PreparedStatement preparedStatement;
@@ -47,7 +46,8 @@ public class login extends javax.swing.JFrame {
 
        
     }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -59,18 +59,13 @@ public class login extends javax.swing.JFrame {
 
         login = new javax.swing.JLabel();
         username1 = new javax.swing.JLabel();
-        password = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
-        login1 = new javax.swing.JButton();
+        password = new javax.swing.JLabel();
         password1 = new javax.swing.JPasswordField();
+        login1 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentAdded(java.awt.event.ContainerEvent evt) {
-                formComponentAdded(evt);
-            }
-        });
 
         login.setFont(new java.awt.Font("DejaVu Serif Condensed", 3, 36)); // NOI18N
         login.setForeground(new java.awt.Color(254, 254, 254));
@@ -82,17 +77,26 @@ public class login extends javax.swing.JFrame {
         username1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         username1.setText("UserName");
 
-        password.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        password.setForeground(new java.awt.Color(254, 254, 254));
-        password.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        password.setText("Password");
-
         username.setBackground(new java.awt.Color(1, 1, 1));
         username.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
         username.setForeground(new java.awt.Color(254, 254, 254));
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameActionPerformed(evt);
+            }
+        });
+
+        password.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        password.setForeground(new java.awt.Color(254, 254, 254));
+        password.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        password.setText("Password");
+
+        password1.setBackground(new java.awt.Color(1, 1, 1));
+        password1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
+        password1.setForeground(new java.awt.Color(254, 254, 254));
+        password1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                password1ActionPerformed(evt);
             }
         });
 
@@ -103,15 +107,6 @@ public class login extends javax.swing.JFrame {
         login1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 login1ActionPerformed(evt);
-            }
-        });
-
-        password1.setBackground(new java.awt.Color(1, 1, 1));
-        password1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 24)); // NOI18N
-        password1.setForeground(new java.awt.Color(254, 254, 254));
-        password1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                password1ActionPerformed(evt);
             }
         });
 
@@ -129,6 +124,15 @@ public class login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(177, 177, 177)
+                        .addComponent(login1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -141,18 +145,9 @@ public class login extends javax.swing.JFrame {
                         .addGap(63, 63, 63)
                         .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(181, 181, 181))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(login1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(228, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,76 +164,65 @@ public class login extends javax.swing.JFrame {
                     .addComponent(password1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addComponent(login1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_formComponentAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formComponentAdded
-
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameActionPerformed
 
+    private void password1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_password1ActionPerformed
+
     private void login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login1ActionPerformed
-      
+
         String selectlogin =     ( "SELECT * FROM login");
- 
-    String entereduser = username.getText();
-       // String enteredpass = password1.getPassword().toString();
-   
-               
-                String user;
-                 String pass;
-//                new examDetails().setVisible(true);
-//                            this.setVisible(false);
-                             
-                 
+
+        String entereduser = username.getText();
+      //  String enteredpass = password1.getPassword().toString();
+
+        String user;
+        String pass;
+        //                new BookAuditorium().setVisible(true);
+        //                            this.setVisible(false);
+
         try {
             getConnectiondb();
             Statement stgetlogin  = myConn.createStatement();
             ResultSet rtgetlogin = stgetlogin.executeQuery(selectlogin);
-               while(rtgetlogin.next())
-               {
-                  user = rtgetlogin.getString("username");
-                   pass = rtgetlogin.getString("password");
-                   System.out.println("user,  "+user+", pass "+pass);
-                 //  System.out.println("enteruser , "+entereduser+", passentered "+enteredpass);
-                   if(entereduser.equals(user))
-                   {
-//                    new examDetails().setVisible(true);
-//                            this.setVisible(false);
-//                            break;  
-                       if(pass.equals(new String((password1.getPassword()))))
-                       {
-                            new examDetails().setVisible(true);
-                            this.setVisible(false);
-                            break;
-                       }
-                   }
-               }
-             
-               
-               
-        
-       
-               } catch (SQLException ex) {
-            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+            while(rtgetlogin.next())
+            {
+                user = rtgetlogin.getString("username");
+                pass = rtgetlogin.getString("password");
+                System.out.println("user,  "+user+", pass "+pass);
+             //   System.out.println("enteruser , "+entereduser+", passentered "+enteredpass);
+                if(entereduser.equals(user))
+                {
+                    //                    new BookAuditorium().setVisible(true);
+                    //                            this.setVisible(false);
+                    //                            break;
+                    if(pass.equals(new String((password1.getPassword()))))
+                    {
+                        new BookAuditorium().setVisible(true);
+                        this.setVisible(false);
+                        break;
+                    }
+                }
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(loginaud.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(loginaud.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-// TODO add your handling code here:
-    }//GEN-LAST:event_login1ActionPerformed
-
-    private void password1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_password1ActionPerformed
+    }//GEN-LAST:event_login1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -263,20 +247,20 @@ public class login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(loginaud.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(loginaud.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(loginaud.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(loginaud.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new login().setVisible(true);
+                new loginaud().setVisible(true);
             }
         });
     }

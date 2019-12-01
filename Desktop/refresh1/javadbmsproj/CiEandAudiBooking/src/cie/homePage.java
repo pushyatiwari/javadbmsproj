@@ -1,6 +1,7 @@
 package cie;
 
 
+import Aud.loginaud;
 import Aud.BookAuditorium;
 import java.awt.Color;
 
@@ -38,7 +39,7 @@ public class homePage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        cieandaudi.setBackground(new java.awt.Color(102, 0, 102));
+        cieandaudi.setBackground(new java.awt.Color(1, 1, 1));
         cieandaudi.setFont(new java.awt.Font("DejaVu Serif", 1, 48)); // NOI18N
         cieandaudi.setForeground(new java.awt.Color(254, 254, 254));
         cieandaudi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -87,21 +88,21 @@ public class homePage extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(cieandaudi, javax.swing.GroupLayout.DEFAULT_SIZE, 982, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(337, 337, 337)
+                .addGap(262, 262, 262)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(audi, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                    .addComponent(cie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(cie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(audi, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(cieandaudi, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                .addGap(55, 55, 55)
+                .addGap(27, 27, 27)
                 .addComponent(cie, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(32, 32, 32)
                 .addComponent(audi, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,7 +117,9 @@ public class homePage extends javax.swing.JFrame {
     }//GEN-LAST:event_cieActionPerformed
 
     private void audiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_audiActionPerformed
-        new BookAuditorium().setVisible(true);
+//        new BookAuditorium().setVisible(true);
+//           this.setVisible(false);
+new loginaud().setVisible(true);
            this.setVisible(false);
     }//GEN-LAST:event_audiActionPerformed
 
